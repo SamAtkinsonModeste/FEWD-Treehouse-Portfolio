@@ -1,0 +1,46 @@
+@use '../utilities/functions' as f;
+@use '../utilities/mixins' as mix;
+
+
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.logo {
+    height: 59px;
+}
+
+.desk-sam-logo {
+    height: 50px;
+
+    @include mix.mqDesk('tablet-portrait') {
+
+        padding-bottom: f.em(4px);
+
+
+    }
+
+    @include mix.mqDesk('lg-desktop-width') {
+
+        height: 60px;
+
+
+    }
+
+    @include mix.mqDesk('xx-lg-desktop-width') {
+
+        height: 70px;
+        padding-bottom: f.em(4px);
+
+    }
+
+    @include mix.mqDesk('xxx-lg-desktop-width') {
+
+        height: 80px;
+        padding-bottom: f.em(6px);
+
+    }
+}

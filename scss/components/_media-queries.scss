@@ -1,0 +1,45 @@
+@use '../utilities/variables' as *;
+@use '../utilities/extends' as *;
+@use '../utilities/functions' as f;
+@use '../utilities/mixins' as mix;
+
+
+
+/***************************
+  CONTAINERS MEDIA QUERIES
+*********************************/
+/***********NAV*******************/
+.sam-logo,
+.hamburger {
+
+  @include mix.mqDesk('tablet-portrait') {
+    display: none;
+
+  }
+
+}
+
+.main-header {
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.bg-black-grad-desk;
+
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+
+    height: 65px;
+
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+
+    height: 75px;
+
+  }
+
+  @include mix.mqDesk('xxx-lg-desktop-width') {
+
+    height: 95px;
+
+  }
+}
