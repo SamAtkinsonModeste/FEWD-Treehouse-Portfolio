@@ -1,0 +1,165 @@
+// ==========================================================================
+// Mixins
+//==========================================================================
+@use 'variables' as *;
+
+//Text Properties
+@mixin text($size, $l-height: null, $weight: null, $color: null) {
+	font-size: $size;
+	line-height: $l-height;
+	font-weight: $weight;
+	color: $color;
+}
+
+
+//SHADOWS
+
+//Text Shadow
+@mixin text-shdo($hr: 0.5px, $vrt: 0.5px, $blur: null, $col: $black) {
+	text-shadow: $hr $vrt $blur $col;
+}
+
+//Box Shadow
+@mixin box-shdo($in: null, $hr: 0, $vrt: 0, $blur: 15px, $sphd: null, $colour: $black) {
+	box-shadow: $in $hr $vrt $blur $sphd $colour;
+}
+
+
+//Gradient
+
+@mixin radialGradient {
+	background: -webkit-radial-gradient($grey, $black );
+	background: -moz-radial-gradient($grey, $black );
+	background: -o-radial-gradient($grey, $black );
+	background: radial-gradient($grey, $black );
+}
+
+
+@mixin gold-bar {
+	background: -webkit-linear-gradient($gold-grad-1, $gold-grad-2 23%, $gold-grad-3 43%, $gold-grad-4 57%, $gold-grad-5 77%, $gold-grad-6 91%, $gold-grad-7 95%);
+	background: -moz-linear-gradient($gold-grad-1, $gold-grad-2 23%, $gold-grad-3 43%, $gold-grad-4 57%, $gold-grad-5 77%, $gold-grad-6 91%, $gold-grad-7 95%);
+	background: -o-linear-gradient($gold-grad-1, $gold-grad-2 23%, $gold-grad-3 43%, $gold-grad-4 57%, $gold-grad-5 77%, $gold-grad-6 91%, $gold-grad-7 95%);
+	background: linear-gradient($gold-grad-1, $gold-grad-2 23%, $gold-grad-3 43%, $gold-grad-4 57%, $gold-grad-5 77%, $gold-grad-6 91%, $gold-grad-7 95%);
+}
+
+
+
+
+
+@mixin bg-black-grad {
+	background: -webkit-linear-gradient(46deg, $black 8%, $grey, $black 80%);
+	background: -moz-linear-gradient(46deg, $black 8%, $grey, $black 80%);
+	background: -o-linear-gradient(46deg, $black 8%, $grey, $black 80%);
+	background: linear-gradient(46deg, $black 8%, $grey, $black 80%);
+}
+
+@mixin bg-black-grad-desk {
+	background: -webkit-linear-gradient(46deg, $black 0%, $grey 38%, $black 140%);
+	background: -moz-linear-gradient(46deg, $black 0%, $grey 38%, $black 140%);
+	background: -o-linear-gradient(46deg, $black 0%, $grey 38%, $black 140%);
+	background: linear-gradient(46deg, $black 0%, $grey 38%, $black 140%);
+}
+
+
+@mixin bg-proj-cont-grad {
+	background: -webkit-linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $black 21%, $black 46%, $black 79%, $grey 97%, $emperor-bg-proj 100%);
+	background: -moz-linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $black 21%, $black 46%, $black 79%, $grey 97%, $emperor-bg-proj 100%);
+	background: -o-linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $black 21%, $black 46%, $black 79%, $grey 97%, $emperor-bg-proj 100%);
+	background: linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $black 21%, $black 46%, $black 79%, $grey 98%, $emperor-bg-proj 110%);
+
+}
+
+@mixin bg-proj-logo-grad {
+	background: -webkit-linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $silver-rust 21%, $silver-rust 46%, $silver-rust 79%, $grey 97%, $emperor-bg-proj 100%);
+	background: -moz-linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $silver-rust 21%, $silver-rust 46%, $silver-rust 79%, $grey 97%, $emperor-bg-proj 100%);
+	background: -o-linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $silver-rust 21%, $silver-rust 46%, $silver-rust 79%, $grey 97%, $emperor-bg-proj 100%);
+	background: linear-gradient(312deg, $emperor-bg-proj, $grey 4%, $silver-rust 21%, $silver-rust 46%, $silver-rust 79%, $grey 98%, $emperor-bg-proj 110%);
+
+}
+
+@mixin bg-proj-info {
+	background: -webkit-linear-gradient(348deg, $black, $grey 64%, $black);
+	background: -moz-linear-gradient(348deg, $black, $grey 64%, $black);
+	background: -o-linear-gradient(348deg, $black, $grey 64%, $black);
+	background: linear-gradient(348deg, $black, $grey 64%, $black);
+}
+
+@mixin ul-bg($dir-pix: 275px at center left, $col-1: null, $col-2: null) {
+	background: -webkit-radial-gradient($dir-pix, $col-1, $col-2);
+	background: -moz-radial-gradient($dir-pix, $col-1, $col-2);
+	background: -o-radial-gradient($dir-pix, $col-1, $col-2);
+	background: radial-gradient($dir-pix, $col-1, $col-2);
+}
+
+//Border 
+@mixin br-default ($pix: 1px, $styl: solid, $colu: null) {
+	border: $pix $styl $colu;
+}
+
+
+
+//Flex Box
+@mixin flexy ($disp: flex,
+	$dir: null,
+	$wrap: null,
+	$just: null,
+	$align: null) {
+	display: $disp;
+	flex-direction: $dir;
+	flex-wrap: $wrap;
+	justify-content: $just;
+	align-items: $align;
+
+}
+
+
+//Media Query 
+
+@mixin mqMobile($break-w, $break-h) {
+	$brk-widthvalue : map-get($breakpoints, $break-w);
+	$brk-heightvalue : map-get($breakheights, $break-h);
+	$sm : map-get($breakpoints, "xxx-s-mobile-width");
+	$short: map-get($breakheights, "xx-short-mobile-height");
+
+	@if $brk-widthvalue < $sm and $brk-heightvalue < $short {
+		@media (max-width: $brk-widthvalue ) and (max-height: $brk-heightvalue) {
+			@content;
+		}
+
+	}
+
+	@else {
+		@media (min-width: $brk-widthvalue) and (min-height: $brk-heightvalue) {
+			@content;
+		}
+	}
+}
+
+@mixin mqDesk($break) {
+	$brk-value : map-get($breakpoints, $break);
+	$desk-small : map-get($breakpoints, "s-mobile-width");
+
+	@if $brk-value < $desk-small {
+		@media (max-width: $brk-value ) {
+			@content;
+		}
+
+	}
+
+	@else {
+		@media (min-width: $brk-value) {
+			@content;
+		}
+	}
+}
+
+
+// @mixin mq-mobile-small
+
+
+//DEBUGING 
+
+@mixin debug ($pix: 1px, $color: null) {
+	border: solid $pix $color;
+
+}

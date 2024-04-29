@@ -1,0 +1,12 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+
+//Function to get em values from pixel arguments
+@use 'variables' as *;
+@use 'sass:math';
+
+@function em($target, $context: $base__font-size) {
+	@return math.div($target, $context) * 1em;
+}
