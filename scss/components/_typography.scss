@@ -167,3 +167,138 @@ textarea,
 }
 
 
+/*******************
+     PORTFOLIO
+*******************/
+
+
+.head-port {
+    @include mix.text($size: f.em(25px));
+    transform: translateY(f.em(-70px));
+}
+
+.slide-nav,
+.live-text,
+.created-with {
+    font-style: italic;
+}
+
+
+.live-text {
+    font-size: f.em(10px);
+    font-weight: bold;
+    transform: translate(0, -150px);
+
+    //MEDIA QUERIES
+    @include mix.mqMobile($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+
+        transform: translate(6px, -195px);
+    }
+
+    @include mix.mqMobile($break-w: 's-mobile-width', $break-h: 'ex-tall-mobile-height') {
+        transform: translate(-2px, -215px);
+        font-size: f.em(11px);
+    }
+
+}
+
+.info-head,
+.logo-text,
+#about-me p {
+    @include mix.text($size: f.em(11px), $l-height: f.em(22px));
+    text-align: center;
+
+    //MEDIA QUERIES
+    @include mix.mqMobile($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+        @include mix.text($size: f.em(14px), $l-height: f.em(23px));
+        margin-bottom: f.em(5px);
+    }
+}
+
+.proj-7 .info-head,
+.proj-8 .info-head {
+    font-size: f.em(12px);
+}
+
+.created-with {
+    @include mix.text($size: f.em(14px), $l-height: f.em(24px));
+}
+
+.way-logo {
+    margin: f.em(2px) 0 f.em(10px) 0;
+
+}
+
+.balls:hover::before {
+    font-size: f.em(11px);
+}
+
+/*******************
+     ABOUT ME
+*******************/
+
+#about-me p {
+    width: 99%;
+    margin: 0 auto;
+}
+
+.about-me,
+.skill-head {
+    text-align: right;
+}
+
+
+.skill-head {
+    @include mix.text($size: f.em(16px), $l-height: f.em(32px));
+
+}
+
+.about-me {
+    @include mix.text($size: f.em(20px), $l-height: f.em(20px));
+    width: f.em(70px);
+    // margin-top: f.em(39px);
+    // margin-right: f.em(-31px);
+}
+
+.skill-head {
+    margin: 0 f.em(25px) f.em(-10px) 0;
+
+}
+
+.web-dev {
+    @include mix.text($size: f.em(14px), $l-height: f.em(22px));
+    text-align: center;
+    margin: 0 auto f.em(25px);
+}
+
+.design-dev {
+    margin-top: f.em(25px);
+}
+
+/*******************
+    CONTACT ME
+*******************/
+.contact-h2 {
+    transform: translateY(f.em(-115px));
+}
+
+.need-website {
+    @include mix.text($size: f.em(11px), $l-height: f.em(24px));
+    transform: translateY(f.em(-138px));
+}
+
+::placeholder,
+::-moz-placeholder,
+::-webkit-input-placeholder {
+    font-style: italic;
+
+}
+
+textarea::placeholder,
+textarea::-moz-placeholder,
+textarea::-webkit-placeholder {
+    font-style: italic;
+
+}
+
+

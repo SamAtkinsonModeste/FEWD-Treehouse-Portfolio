@@ -44,3 +44,103 @@ img {
 
     }
 }
+
+/******************************
+    PORTFOLIO IMAGES
+******************************/
+.colour-img {
+    opacity: 0;
+}
+
+.aside-bg {
+    display: block;
+    width: f.em(56px);
+    height: f.em(150px);
+    transform: scale(1, 1.3) translate(-3px, 11px);
+
+    //MEDIA QUERIES
+    // @include mix.mq($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+
+    //     width: f.em(95px);
+    //     height: f.em(190px);
+    //     transform: scale(1, 1.3) translate(-14px, 14px);
+    // }
+
+    // @include mix.mq($break-w: 's-mobile-width', $break-h: 'ex-tall-mobile-height') {
+    //     width: f.em(110px);
+    //     height: f.em(210px);
+    //     transform: scale(1, 1.3) translate(-36px, 18px);
+    // }
+
+}
+
+.nav-deco {
+    width: 30px;
+    transform: translate(8px, -5px);
+
+    //MEDIA QUERIES
+    // @include mix.mq($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+    //     width: 45px;
+    //     transform: translate(5px, -20px);
+    // }
+}
+
+.chain-link {
+    width: 20px;
+    transform: translate(15px, -160px);
+
+    //MEDIA QUERIES
+    // @include mix.mq($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+    //     width: 25px;
+    //     transform: translate(18px, -200px);
+    // }
+}
+
+.browser,
+.git {
+    margin-top: f.em(15px);
+    transform: translate(10px, -159px);
+}
+
+.git {
+    margin-top: f.em(10px);
+
+    //MEDIA QUERIES
+    // @include mix.mq($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+    //     margin-top: f.em(18px);
+    // }
+}
+
+
+.html-made,
+.css-made,
+.sass-made,
+.js-made,
+.photoshop-made {
+    width: f.em(35px);
+    margin: 0 f.em(5px);
+}
+
+
+.proj-8 .html-made,
+.proj-8 .css-made,
+.proj-8 .js-made {
+    width: f.em(26px);
+    margin-bottom: f.em(10px);
+}
+
+.logo-S74 .logo-img img {
+    margin-top: f.em(68px);
+}
+
+.logo-way .logo-img img {
+    margin-top: f.em(2px);
+}
+
+/*** about me **/
+.me-about-img img {
+    width: f.em(124px);
+    height: f.em(103px);
+    transform: translateX(-12px);
+
+}

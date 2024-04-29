@@ -28,7 +28,8 @@
 }
 
 
-#contact-me-form {
+#contact-me-form,
+.proj-viewport {
     @extend %marg-cen;
 }
 
@@ -255,6 +256,510 @@ main {
 #home-bottom {
     transform: rotate(180deg);
     // @include mix.debug($color: rgb(24, 170, 95));
+}
+
+/*********************************************
+          PORTFOLIO SECTION
+**********************************************/
+#portfolio {
+    padding: 0;
+    margin-top: f.em(55px);
+
+}
+
+#inner-portfolio {
+    position: relative;
+    // margin-bottom: f.em(32px);
+    // @include mix.debug($color: rgb(233, 51, 10));
+}
+
+.portfolio-header {
+    position: relative;
+    width: 100%;
+    // @include mix.debug($color: rgb(4, 184, 34));
+}
+
+.active-proj {
+    border-bottom: f.em(2px) solid $gold;
+}
+
+.slide-nav {
+    @include mix.flexy($just: center);
+    margin-top: f.em(-15px);
+    margin-bottom: f.em(2px);
+    transform: translateY(f.em(-100px));
+}
+
+.slide-nav li {
+    margin: 0 5px;
+    padding: f.em(3px) f.em(16px);
+    height: f.em(30px);
+}
+
+.projects-container {
+    width: 100%;
+    position: relative;
+    height: fit-content;
+    transform: translateY(f.em(-90px));
+    // @include mix.debug($color: rgb(235, 221, 28));
+
+}
+
+.proj-viewport {
+    width: 318px;
+    overflow: hidden;
+    // @include mix.debug($color: rgb(28, 235, 80));
+}
+
+.project-slider {
+    width: 100%;
+    display: block;
+    @extend %marg-cen;
+    // @include mix.debug($color: rgb(235, 28, 28));
+}
+
+.project-container,
+.logo-container {
+    width: 100%;
+    height: f.em(293px);
+    margin-bottom: f.em(40px);
+    @include mix.flexy($dir: column, $just: space-evenly);
+    @include mix.bg-proj-cont-grad;
+    border: solid 3px $black;
+    // @include mix.debug($color: rgb(28, 114, 235));
+
+}
+
+.logo-container {
+    @include mix.bg-proj-logo-grad;
+    // @include mix.debug($color: rgb(28, 114, 235));
+
+}
+
+.project-img-links {
+    width: f.em(310px);
+    height: f.em(230px);
+    @include mix.flexy($just: space-between);
+    margin: 0 auto;
+}
+
+.proj-img {
+    width: f.em(108px);
+    margin-left: f.em(90px);
+    // @include mix.debug($color: pink);
+
+}
+
+.taller-proj {
+    width: f.em(72px);
+    margin-left: f.em(110px);
+
+}
+
+.proj-4 .taller-proj {
+    width: f.em(63px);
+
+}
+
+
+.proj-7 .taller-proj {
+    width: f.em(78px);
+}
+
+
+.square-5 {
+    width: f.em(208px);
+    margin-left: f.em(30px);
+
+}
+
+.square-6 {
+    width: f.em(220px);
+    margin-left: f.em(18px);
+
+}
+
+.square-8 {
+    width: f.em(207px);
+    margin-left: f.em(20px);
+}
+
+
+.active-slide-proj {
+    margin: 0 f.em(20px);
+}
+
+.proj-divider {
+    display: none;
+}
+
+.proj-8 .info-head {
+    width: 93%;
+    @extend %marg-cen;
+}
+
+
+
+.proj-nav {
+
+    width: f.em(56px);
+    height: f.em(150px);
+    padding: f.em(2px);
+    margin-right: f.em(10px);
+    margin-top: f.em(5px);
+    // @include mix.debug($color: rgb(183, 235, 28));
+
+}
+
+.project-info,
+.logo-info {
+    height: 69px;
+    width: 100%;
+    @include mix.bg-proj-info;
+    @include mix.box-shdo($in: inset, $blur: 7px, $sphd: 0, $colour: $red);
+    // @include mix.debug($color: rgb(235, 59, 28));
+}
+
+.logo-info {
+    height: 125px;
+}
+
+.made-with {
+    height: 40px;
+    @include mix.flexy();
+    padding: 0 f.em(2px);
+    // @include mix.debug($color: rgb(68, 238, 244));
+
+}
+
+.created-with {
+    width: 32%;
+    margin-right: f.em(5px);
+    align-self: center;
+}
+
+
+.logo-img {
+    width: 308px;
+    height: 268px;
+    // @include mix.debug($color: rgb(100, 68, 244));
+}
+
+
+.logo-way .logo-info {
+    margin-top: f.em(35px);
+    height: f.em(90px);
+}
+
+
+
+.proj-slider-nav {
+    height: 30px;
+    width: 100%;
+    padding: 0 f.em(2px);
+    overflow: hidden;
+    @include mix.flexy($just: space-between);
+    background: linear-gradient(69deg, $grey, $black, $black, $grey);
+    transform: translateY(15px);
+    // @include mix.debug($color: rgb(208, 222, 11));
+}
+
+.arrow-nav {
+    @include mix.flexy($just: space-around, $align: center);
+    width: 150px;
+    margin-right: f.em(5px);
+    // @include mix.debug($color: rgb(11, 131, 222));
+}
+
+#arrow-right,
+#arrow-left {
+    width: 40px;
+    height: 20px;
+    // margin: f.em(18px) f.em(10px);
+}
+
+#arrow-left {
+    transform: rotate(180deg);
+}
+
+
+
+#divider {
+    height: 30px;
+    width: 5px;
+}
+
+
+
+
+.ul-navs {
+    width: 120px;
+    @include mix.flexy($dir: column);
+    margin-left: f.em(5px);
+    // @include mix.debug($color: rgb(222, 11, 36));
+}
+
+.ul-navs,
+.arrow-nav {
+    position: relative;
+    @include mix.br-default($colu: rgb($gold, 0.5));
+    border-radius: $br-rad-lg;
+}
+
+
+.static,
+.interactive,
+.logos {
+    margin: f.em(5px) 0;
+    height: f.em(30px);
+    @include mix.flexy();
+    // @include mix.debug($color: rgb(180, 222, 11));
+
+}
+
+.current-ul-port {
+    margin-top: 0;
+}
+
+
+.balls {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: f.em(2px);
+    margin: f.em(5px) f.em(6px);
+    border-radius: 100%;
+   
+}
+
+.sta {
+    background: radial-gradient($rad-grad-1, $rad-grad-2, $black );
+}
+
+.inter {
+    background: radial-gradient($rad-grad-orange-1, $rad-grad-orange-2, $black );
+}
+
+.log {
+    background: radial-gradient($rad-grad-amber-1, $rad-grad-amber-2, $black );
+}
+
+/*Balls active*/
+.active-indiBall {
+    @include mix.gold-bar;
+}
+
+/****************************
+       ABOUT ME SECTION
+****************************/
+
+#inner-about-me {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+#about-bg {
+    width: f.em(96px);
+    height: f.em(100px);
+}
+
+#inner-about-me p {
+    grid-column: 1/span 2;
+}
+
+
+.me-about-img {
+    grid-column: 2/3;
+    @include mix.flexy();
+}
+
+
+
+
+.dev-list,
+.design-list {
+    @include mix.flexy($just: space-evenly, $align: center);
+}
+
+.dev-web,
+.design-dev {
+    grid-column: 2,
+}
+
+
+.dev-list,
+.design-list,
+.skill-head-underline,
+.dev-web {
+    grid-column: 1 /span 2;
+}
+
+.skill-head-underline {
+    @include mix.flexy($dir: column);
+}
+
+
+
+.skill-under {
+    height: f.em(2px);
+    width: 260px;
+    margin-left: f.em(37px);
+    @include mix.gold-bar();
+}
+
+.dev-list li,
+.design-list li {
+    width: 45px;
+    height: 45px;
+}
+
+.web-dev-underline,
+.web-design-underline {
+    display: none;
+}
+
+.dev-list,
+.design-list {
+    height: f.em(46px);
+    padding: f.em(6px) 0;
+    border-radius: f.em(32px);
+    @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
+}
+
+
+.design-list {
+    @include mix.ul-bg($dir-pix: 275px at center right, $col-1: $ul-rad-grad-1, $col-2: $black);
+}
+
+/******************************
+    CONTACT ME            
+*******************************/
+
+#contact-me-form {
+    width: f.em(310px);
+    transform: translateY(f.em(-100px));
+    // @include mix.debug($color: rgb(98, 46, 220));
+
+}
+
+.form-p {
+    @include mix.flexy($just: space-between);
+    margin: f.em(40px) auto;
+    width: 90%;
+    height: f.em(50px);
+
+}
+
+label {
+    border-bottom: f.em(2px) solid $gold;
+    height: f.em(25px);
+
+
+}
+
+input,
+textarea {
+    margin-left: (f.em(30px));
+    background: $black;
+    outline: none;
+    border: none;
+    width: f.em(200px);
+    border-radius: f.em(6px);
+    // @include mix.debug($color: rgb(130, 184, 4));
+
+
+}
+
+textarea {
+    margin-left: (f.em(15px));
+    transform: translateY(-2px);
+    height: f.em(21px);
+
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    background: $black;
+    color: $gold;
+}
+
+
+textarea:focus {
+    height: f.em(60px);
+    transform: translateY(-38px);
+    // @include mix.debug($color: rgb(184, 181, 4));
+
+
+}
+
+textarea::-webkit-scrollbar {
+    width: f.em(10px);
+}
+
+textarea::-webkit-scrollbar-track {
+    @include mix.box-shdo($in: inset, $blur: f.em(3px), $colour: $gold);
+    border-radius: f.em(8px);
+}
+
+textarea::-webkit-scrollbar-thumb {
+    @include mix.box-shdo($in: inset, $blur: f.em(3px), $colour: $red);
+    border-radius: f.em(5px);
+}
+
+textarea::-webkit-scrollbar-corner,
+textarea::-webkit-resizer {
+    background: $black;
+
+}
+
+
+
+
+#submit {
+    background: $black;
+    width: f.em(80px);
+    margin: 0 auto;
+    @include mix.br-default($gold);
+    border-radius: $br-rad;
+    transform: translate(-2px, -18px);
+
+}
+
+
+
+/******************************
+            FOOTER
+*******************************/
+
+
+footer {
+    grid-area: footer;
+    // height: 60px;
+    background: $black;
+
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+
+    // @include mix.debug($color: rgb(184, 4, 172));
+
+}
+
+.contact-links {
+    margin-top: 0;
+    @include mix.flexy($just: center);
+}
+
+.social-links {
+    height: 30px;
+    width: 30px;
+    margin: 0 f.em(10px);
+}
+
+small {
+    margin: f.em(3px) auto 0;
+    display: block;
+    width: 80%;
 }
 
 
