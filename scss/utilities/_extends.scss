@@ -1,0 +1,111 @@
+// ==========================================================================
+// Place Holders
+//==========================================================================
+
+//SPACING
+
+//Padding
+
+%pad-all {
+	padding: em(16px);
+}
+
+%pad-sides {
+	padding: 0 em(16px);
+
+}
+
+//Margin 
+
+%marg-cen {
+	margin: 0 auto;
+}
+
+%marg-zero {
+	margin: 0;
+}
+
+//Nav
+//Basic display
+%nav-item-dis {
+	margin: 0 em(10px);
+	display: block;
+
+}
+
+//links
+%nav-item-link {
+	display: block;
+	padding: em(8px, 20px);
+	text-decoration: none;
+	text-align: center;
+	border-radius: 1px;
+
+}
+
+
+
+
+
+
+
+
+
+//Primary and Secondary Headings
+%h-prim {
+	margin-bottom: em(50px, 30px);
+
+}
+
+
+// %h-sec {
+// 	letter-spacing: $letter-spacing;
+
+// }
+
+
+//Links base styles
+
+%link-deflt {
+	text-decoration: none;
+
+}
+
+
+// %link-hov {
+// 	color: $electric-blue;
+// }
+
+//Buttons base styles
+
+%btn {
+	margin: em(7px) auto;
+	padding: em(20px, 30px);
+	border: 0;
+	// border-radius: $br-rad;
+	width: 100%;
+	// color: $silver-rust;
+	font-size: em(18px);
+	display: block;
+
+	&:hover {
+		opacity: .50;
+	}
+}
+
+//Image base styles
+%img {
+	display: block;
+	padding: em(5px);
+	margin: 0 auto;
+	margin-bottom: em(24px);
+	max-width: 100%;
+	height: auto;
+}
+
+//Pseudo elements base styles
+%pseudo {
+	content: "";
+	display: block;
+	position: absolute;
+}
