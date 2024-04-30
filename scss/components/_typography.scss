@@ -348,12 +348,22 @@ textarea,
 
 .skill-head {
   margin: 0 f.em(25px) f.em(-10px) 0;
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(60px), $l-height: f.em(30px));
+    margin: 0 0 0 f.em(10px);
+    transform: translate(-18px, 26px);
+  }
 }
 
 .web-dev {
   @include mix.text($size: f.em(14px), $l-height: f.em(22px));
   text-align: center;
   margin: 0 auto f.em(25px);
+  @include mix.mqDesk('tablet-portrait') {
+    text-align: left;
+    margin: f.em(10px) 0 f.em(15px) f.em(20px);
+    @include mix.text($size: f.em(25px), $l-height: f.em(50px));
+  }
 }
 
 .design-dev {

@@ -1240,6 +1240,13 @@ main {
   justify-content: space-evenly;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .dev-list,
+  .design-list {
+    width: 450px;
+    margin-left: auto;
+  }
+}
 
 .dev-web,
 .design-dev {
@@ -1262,12 +1269,20 @@ main {
 .skill-under {
   height: 0.125em;
   width: 260px;
+  border-radius: 5px;
   align-self: flex-end;
   margin-left: auto;
   background: -webkit-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
   background: -moz-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
   background: -o-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
   background: linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+}
+@media (min-width: 768px) {
+  .skill-under {
+    height: 0.1875em;
+    width: 300px;
+    transform: translateX(215px);
+  }
 }
 
 .dev-list li,
@@ -1279,6 +1294,19 @@ main {
 .web-dev-underline,
 .web-design-underline {
   display: none;
+}
+@media (min-width: 768px) {
+  .web-dev-underline,
+  .web-design-underline {
+    display: block;
+    width: 15.625em;
+    height: 0.1875em;
+    background: -webkit-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    background: -moz-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    background: -o-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    background: linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    transform: translate(-232px, -40px);
+  }
 }
 
 .dev-list,
@@ -1926,12 +1954,28 @@ textarea,
 .skill-head {
   margin: 0 1.5625em -0.625em 0;
 }
+@media (min-width: 768px) {
+  .skill-head {
+    font-size: 3.75em;
+    line-height: 1.875em;
+    margin: 0 0 0 0.625em;
+    transform: translate(-18px, 26px);
+  }
+}
 
 .web-dev {
   font-size: 0.875em;
   line-height: 1.375em;
   text-align: center;
   margin: 0 auto 1.5625em;
+}
+@media (min-width: 768px) {
+  .web-dev {
+    text-align: left;
+    margin: 0.625em 0 0.9375em 1.25em;
+    font-size: 1.5625em;
+    line-height: 3.125em;
+  }
 }
 
 .design-dev {

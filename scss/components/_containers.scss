@@ -666,6 +666,10 @@ main {
 .dev-list,
 .design-list {
   @include mix.flexy($just: space-evenly, $align: center);
+  @include mix.mqDesk('tablet-portrait') {
+    width: 450px;
+    margin-left: auto;
+  }
 }
 
 .dev-web,
@@ -687,9 +691,15 @@ main {
 .skill-under {
   height: f.em(2px);
   width: 260px;
+  border-radius: 5px;
   align-self: flex-end;
   margin-left: auto;
   @include mix.gold-bar();
+  @include mix.mqDesk('tablet-portrait') {
+    height: f.em(3px);
+    width: 300px;
+    transform: translateX(215px);
+  }
 }
 
 .dev-list li,
@@ -701,6 +711,13 @@ main {
 .web-dev-underline,
 .web-design-underline {
   display: none;
+  @include mix.mqDesk('tablet-portrait') {
+    display: block;
+    width: f.em(250px);
+    height: f.em(3px);
+    @include mix.gold-bar();
+    transform: translate(-232px, -40px);
+  }
 }
 
 .dev-list,
