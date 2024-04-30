@@ -65,7 +65,8 @@
   }
   
   #home-bg,
-  #home-bottom {
+  #home-bottom,
+  #portfolio-bg{
     @include mix.mqDesk('tablet-portrait') {
       width: f.em(270px);
   

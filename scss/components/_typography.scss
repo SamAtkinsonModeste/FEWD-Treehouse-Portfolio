@@ -2,7 +2,6 @@
 @use '../utilities/mixins' as mix;
 @use '../utilities/functions' as f;
 
-
 .creative-text,
 .webDev-text,
 .head-port,
@@ -17,7 +16,7 @@
 label,
 #submit,
 small {
-    color: $gold;
+  color: $gold;
 }
 
 .info-head,
@@ -29,7 +28,7 @@ small {
 input,
 textarea,
 .balls:hover::before {
-    color: $silver-rust;
+  color: $silver-rust;
 }
 
 .mobile-nav-ul li,
@@ -39,7 +38,7 @@ textarea,
 .contact-h2,
 .need-website,
 .balls:hover::before {
-    text-align: center;
+  text-align: center;
 }
 
 .mobile-nav-ul a,
@@ -53,14 +52,13 @@ textarea,
 .skill-head,
 .contact-h2,
 label {
-    font-family: $font-family--primary;
-    @include mix.text-shdo($hr: 0, $vrt: 1px, $blur: 2px, $col: rgba($red, 0.5));
-
+  font-family: $font-family--primary;
+  @include mix.text-shdo($hr: 0, $vrt: 1px, $blur: 2px, $col: rgba($red, 0.5));
 }
 
 .mobile-nav-ul a,
 .desk-nav-ul a {
-    color: $gold-grad-1;
+  color: $gold-grad-1;
 }
 
 small,
@@ -68,9 +66,8 @@ small,
 .web-dev,
 .need-website,
 #submit {
-    font-family: $font-family--secondary;
+  font-family: $font-family--secondary;
 }
-
 
 .info-head,
 .logo-text,
@@ -78,159 +75,223 @@ small,
 input,
 textarea,
 .ball-tool-tip {
-    font-family: $font-family--parag;
+  font-family: $font-family--parag;
 }
 
 .mobile-nav-ul a,
 .desk-nav-ul a {
-    text-decoration: none;
-
+  text-decoration: none;
 }
 
 .mobile-nav-ul {
-    @include mix.text($size: f.em(40px));
+  @include mix.text($size: f.em(40px));
 }
 
-
 .desk-nav-ul a {
-    @include mix.text($size: f.em(30px), $l-height: f.em(30px));
+  @include mix.text($size: f.em(30px), $l-height: f.em(30px));
 
-    @include mix.mqDesk("lg-desktop-width") {
-        @include mix.text($size: f.em(40px), $l-height: f.em(25px));
-    }
+  @include mix.mqDesk('lg-desktop-width') {
+    @include mix.text($size: f.em(40px), $l-height: f.em(25px));
+  }
 
-    @include mix.mqDesk("xx-lg-desktop-width") {
-        @include mix.text($size: f.em(50px), $l-height: f.em(24px));
-    }
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    @include mix.text($size: f.em(50px), $l-height: f.em(24px));
+  }
 
-    @include mix.mqDesk("xxx-lg-desktop-width") {
-        @include mix.text($size: f.em(70px), $l-height: f.em(24px));
-    }
+  @include mix.mqDesk('xxx-lg-desktop-width') {
+    @include mix.text($size: f.em(70px), $l-height: f.em(24px));
+  }
 }
 
 .web-dev {
-    @include mix.text-shdo($hr: 0, $vrt: f.em(0.1px), $col: $silver-rust);
+  @include mix.text-shdo($hr: 0, $vrt: f.em(0.1px), $col: $silver-rust);
 }
-
-
 
 .creative-text,
 .webDev-text {
-    @include mix.text($size: f.em(23px), $l-height: f.em(17px));
-    margin: 0;
-    padding-left: f.em(6px);
-    width: 50%;
+  @include mix.text($size: f.em(23px), $l-height: f.em(17px));
+  margin: 0;
+  padding-left: f.em(6px);
+  width: 50%;
 
-    //MEDIA QUERY
-    @include mix.mqMobile($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
-        @include mix.text($size: f.em(25px), $l-height: f.em(25px));
-    }
+  //MEDIA QUERY
+  @include mix.mqMobile(
+    $break-w: 'xxx-s-mobile-width',
+    $break-h: 'x-short-mobile-height'
+  ) {
+    @include mix.text($size: f.em(25px), $l-height: f.em(25px));
+  }
 
-    @include mix.mqDesk('tablet-portrait') {
-        @include mix.text($size: f.em(65px), $l-height: f.em(20px));
-        @include mix.text-shdo($hr: 0, $vrt: 2px, $blur: 3px, $col: rgba($red, 0.5));
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(65px), $l-height: f.em(20px));
+    @include mix.text-shdo(
+      $hr: 0,
+      $vrt: 2px,
+      $blur: 3px,
+      $col: rgba($red, 0.5)
+    );
+  }
 
-    }
+  @include mix.mqDesk('tablet-landscape') {
+    @include mix.text($size: f.em(30px), $l-height: f.em(30px));
+    margin-top: f.em(-60px);
+  }
 
-    @include mix.mqDesk('tablet-landscape') {
-        @include mix.text($size: f.em(30px), $l-height: f.em(30px));
-        margin-top: f.em(-60px);
-    }
-
-    @include mix.mqDesk('lg-desktop-width') {
-        @include mix.text($size: f.em(50px), $l-height: f.em(30px));
-    }
-
+  @include mix.mqDesk('lg-desktop-width') {
+    @include mix.text($size: f.em(50px), $l-height: f.em(30px));
+  }
 }
 
 .webDev-text {
-    @include mix.text($size: f.em(25px), $l-height: f.em(15px));
-    margin-top: f.em(4px);
+  @include mix.text($size: f.em(25px), $l-height: f.em(15px));
+  margin-top: f.em(4px);
 
-    //MEDIA QUERY
-    @include mix.mqMobile($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+  //MEDIA QUERY
+  @include mix.mqMobile(
+    $break-w: 'xxx-s-mobile-width',
+    $break-h: 'x-short-mobile-height'
+  ) {
+    margin-top: 0;
+  }
 
-        margin-top: 0;
-    }
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(70px), $l-height: f.em(15px));
+  }
 
-    @include mix.mqDesk('tablet-portrait') {
-        @include mix.text($size: f.em(70px), $l-height: f.em(15px));
-    }
+  @include mix.mqDesk('tablet-landscape') {
+    @include mix.text($size: f.em(35px), $l-height: f.em(10px));
+  }
 
-    @include mix.mqDesk('tablet-landscape') {
-        @include mix.text($size: f.em(35px), $l-height: f.em(10px));
-    }
-
-    @include mix.mqDesk('lg-desktop-width') {
-        @include mix.text($size: f.em(60px), $l-height: f.em(10px));
-    }
+  @include mix.mqDesk('lg-desktop-width') {
+    @include mix.text($size: f.em(60px), $l-height: f.em(10px));
+  }
 }
-
 
 /*******************
      PORTFOLIO
 *******************/
 
-
 .head-port {
-    @include mix.text($size: f.em(25px));
-    transform: translateY(f.em(-70px));
+  @include mix.text($size: f.em(25px));
+  transform: translateY(f.em(-70px));
+
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(50px));
+    transform: translateY(f.em(-60px));
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  .static-li,
+  .interactive-li,
+  .logo-li {
+    @include mix.text($size: f.em(40px), $l-height: f.em(10px));
+  }
 }
 
 .slide-nav,
 .live-text,
 .created-with {
-    font-style: italic;
+  font-style: italic;
 }
 
-
 .live-text {
-    font-size: f.em(10px);
-    font-weight: bold;
-    transform: translate(0, -150px);
+  font-size: f.em(10px);
+  font-weight: bold;
+  transform: translate(0, -155px);
 
-    //MEDIA QUERIES
-    @include mix.mqMobile($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
+  //MEDIA QUERIES
+  @include mix.mqMobile(
+    $break-w: 'xxx-s-mobile-width',
+    $break-h: 'x-short-mobile-height'
+  ) {
+    transform: translate(1px, -155px);
+  }
 
-        transform: translate(6px, -195px);
-    }
+  @include mix.mqMobile(
+    $break-w: 's-mobile-width',
+    $break-h: 'ex-tall-mobile-height'
+  ) {
+    transform: translate(-2px, -245px);
+    font-size: f.em(11px);
+  }
 
-    @include mix.mqMobile($break-w: 's-mobile-width', $break-h: 'ex-tall-mobile-height') {
-        transform: translate(-2px, -215px);
-        font-size: f.em(11px);
-    }
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translate(11px, -162px);
+    font-size: f.em(25px);
+  }
+}
 
+@include mix.mqDesk('tablet-portrait') {
+  .static-li,
+  .interactive-li,
+  .logo-li {
+    @include mix.text($size: f.em(40px), $l-height: f.em(10px));
+  }
 }
 
 .info-head,
 .logo-text,
 #about-me p {
-    @include mix.text($size: f.em(11px), $l-height: f.em(22px));
-    text-align: center;
+  @include mix.text($size: f.em(11px), $l-height: f.em(22px));
+  text-align: center;
 
-    //MEDIA QUERIES
-    @include mix.mqMobile($break-w: 'xxx-s-mobile-width', $break-h: 'x-short-mobile-height') {
-        @include mix.text($size: f.em(14px), $l-height: f.em(23px));
-        margin-bottom: f.em(5px);
-    }
+  //MEDIA QUERIES
+  @include mix.mqMobile(
+    $break-w: 'xxx-s-mobile-width',
+    $break-h: 'x-short-mobile-height'
+  ) {
+    @include mix.text($size: f.em(14px), $l-height: f.em(23px));
+    margin-bottom: f.em(5px);
+  }
+
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(24px), $l-height: f.em(28px));
+    margin-bottom: f.em(5px);
+  }
 }
 
 .proj-7 .info-head,
 .proj-8 .info-head {
-    font-size: f.em(12px);
+  font-size: f.em(12px);
+  @include mix.mqDesk('tablet-portrait') {
+    font-size: f.em(25px);
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  .proj-8 .info-head {
+    font-size: (20px);
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  .rtb-logo,
+  .s74-logo,
+  .way-logo {
+    @include mix.text($size: f.em(34px), $l-height: f.em(40px));
+  }
+
+  .rtb-logo,
+  .s74-logo {
+    @include mix.text($size: f.em(34px), $l-height: f.em(25px));
+  }
 }
 
 .created-with {
-    @include mix.text($size: f.em(14px), $l-height: f.em(24px));
+  @include mix.text($size: f.em(14px), $l-height: f.em(24px));
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(24px), $l-height: f.em(34px));
+    margin-left: f.em(5px);
+  }
 }
 
 .way-logo {
-    margin: f.em(2px) 0 f.em(10px) 0;
-
+  margin: f.em(2px) 0 f.em(10px) 0;
 }
 
 .balls:hover::before {
-    font-size: f.em(11px);
+  font-size: f.em(11px);
 }
 
 /*******************
@@ -238,67 +299,87 @@ textarea,
 *******************/
 
 #about-me p {
-    width: 99%;
-    margin: 0 auto;
+  width: 99%;
+  margin: 0 auto;
 }
 
+.hi,
 .about-me,
 .skill-head {
-    text-align: right;
+  text-align: right;
 }
 
-
 .skill-head {
-    @include mix.text($size: f.em(16px), $l-height: f.em(32px));
-
+  @include mix.text($size: f.em(16px), $l-height: f.em(32px));
 }
 
 .about-me {
-    @include mix.text($size: f.em(20px), $l-height: f.em(20px));
-    width: f.em(70px);
-    // margin-top: f.em(39px);
-    // margin-right: f.em(-31px);
+  @include mix.text($size: f.em(20px), $l-height: f.em(20px));
+  width: f.em(70px);
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(40px), $l-height: f.em(30px));
+    width: f.em(80px);
+    transform: translate(29px, 67px);
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  #about-me p {
+    @include mix.text($size: f.em(30px), $l-height: f.em(20px));
+    // width: f.em(80px);
+    // transform: translate(29px, 67px);
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  #about-me .hi {
+    @include mix.text($size: f.em(35px), $l-height: f.em(30px));
+    // width: f.em(80px);
+    // transform: translate(29px, 67px);
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  #about-me .hi,
+  #about-me p {
+    transform: translateY(-90px);
+  }
 }
 
 .skill-head {
-    margin: 0 f.em(25px) f.em(-10px) 0;
-
+  margin: 0 f.em(25px) f.em(-10px) 0;
 }
 
 .web-dev {
-    @include mix.text($size: f.em(14px), $l-height: f.em(22px));
-    text-align: center;
-    margin: 0 auto f.em(25px);
+  @include mix.text($size: f.em(14px), $l-height: f.em(22px));
+  text-align: center;
+  margin: 0 auto f.em(25px);
 }
 
 .design-dev {
-    margin-top: f.em(25px);
+  margin-top: f.em(25px);
 }
 
 /*******************
     CONTACT ME
 *******************/
 .contact-h2 {
-    transform: translateY(f.em(-115px));
+  transform: translateY(f.em(-80px));
 }
 
 .need-website {
-    @include mix.text($size: f.em(11px), $l-height: f.em(24px));
-    transform: translateY(f.em(-138px));
+  @include mix.text($size: f.em(11px), $l-height: f.em(24px));
+  transform: translateY(f.em(-138px));
 }
 
 ::placeholder,
 ::-moz-placeholder,
 ::-webkit-input-placeholder {
-    font-style: italic;
-
+  font-style: italic;
 }
 
 textarea::placeholder,
 textarea::-moz-placeholder,
 textarea::-webkit-placeholder {
-    font-style: italic;
-
+  font-style: italic;
 }
-
-

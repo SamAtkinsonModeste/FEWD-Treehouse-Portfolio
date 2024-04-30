@@ -13,9 +13,9 @@
 #nav-svg,
 #glitter-about,
 #about-svg {
-    width: 1px;
-    height: 1px;
-    margin-top: -10px;
+  width: 1px;
+  height: 1px;
+  margin-top: -10px;
 }
 
 #nav-main,
@@ -24,35 +24,34 @@
 .info-head,
 .made-with,
 .created-with {
-    @extend %marg-zero;
+  @extend %marg-zero;
 }
-
 
 #contact-me-form,
 .proj-viewport {
-    @extend %marg-cen;
+  @extend %marg-cen;
 }
 
 #grid-container,
 #overlay {
-    background: $black;
+  background: $black;
 }
 
 #overlay,
 #logo-animation {
-    display: none;
+  display: none;
 }
 
 #portfolio-bg,
 #contact-bg,
 #submit,
 .ball-tool-tip {
-    display: block;
+  display: block;
 }
 
 #portfolio-bg,
 #contact-bg {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .hamburger,
@@ -62,491 +61,579 @@
 .static,
 .interactive,
 .logo {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #grid-container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    place-content: center;
-    grid-template-areas: "header" "main" "footer";
-    margin-top: f.em(-96px);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  place-content: center;
+  grid-template-areas: 'header' 'main' 'footer';
+  margin-top: f.em(-96px);
 }
 
 /********************
      HEADER
 ********************/
 .main-header {
-    grid-area: header;
-    height: 55px;
-    @include mix.bg-black-grad;
-    border-bottom: 1px solid $gold;
-    width: 100%;
-    @include mix.flexy($just: space-between);
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    padding: 0 f.em(15px);
-    
+  grid-area: header;
+  height: 55px;
+  @include mix.bg-black-grad;
+  border-bottom: 1px solid $gold;
+  width: 100%;
+  @include mix.flexy($just: space-between);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  padding: 0 f.em(15px);
 }
 
 .sam-logo,
 .hamburger {
-    height: f.em(59px);
-    width: f.em(59px);
-    // @include mix.debug($color: $silver-rust);
+  height: f.em(59px);
+  width: f.em(59px);
+  // @include mix.debug($color: $silver-rust);
 }
 
 .burger {
-    display: block;
-    height: f.em(6px);
-    margin: f.em(10px) 0;
-    border-radius: 3px;
-    @include mix.gold-bar;
+  display: block;
+  height: f.em(6px);
+  margin: f.em(10px) 0;
+  border-radius: 3px;
+  @include mix.gold-bar;
 }
 
 #mobile-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 100%;
-    @include mix.radialGradient;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+  @include mix.radialGradient;
 }
 
 .mobile-nav-ul {
-    transform: translateY(18vh);
-    max-width: f.em(350px);
-    // @include mix.debug($color: $gold-grad-5);
+  transform: translateY(18vh);
+  max-width: f.em(350px);
+  // @include mix.debug($color: $gold-grad-5);
 }
 
 .mobile-nav-ul li {
-    margin-top: f.em(15px);
-    margin-bottom: f.em(25px);
+  margin-top: f.em(15px);
+  margin-bottom: f.em(25px);
 }
 
 .mobile-nav-ul li:hover a,
 .active-page {
-    @include mix.gold-bar;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: none;
-    font-size: f.em(50px);
+  @include mix.gold-bar;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  font-size: f.em(50px);
 }
 
-
 .hamburger:hover .ham-top {
-    transform-origin: top left;
-    transform: rotate(90deg) scale(0.8) translateX(-5px);
+  transform-origin: top left;
+  transform: rotate(90deg) scale(0.8) translateX(-5px);
 }
 
 .hamburger:hover .ham-mid {
-    transform: rotate(30deg);
+  transform: rotate(30deg);
 }
-
 
 .hamburger:hover .ham-bottom {
-    transform: rotate(311deg) translate(11px, -9px);
+  transform: rotate(311deg) translate(11px, -9px);
 }
 
-
 #nav-main {
-    display: none;
-    width: 100%;
+  display: none;
+  width: 100%;
 
-
-    @include mix.mqDesk('tablet-portrait') {
-        display: block;
-    }
+  @include mix.mqDesk('tablet-portrait') {
+    display: block;
+  }
 }
 
 .desk-nav-ul {
-    @include mix.flexy($just: space-evenly, $align: center);
+  @include mix.flexy($just: space-evenly, $align: center);
 }
 
 .desk-nav-ul li {
-    width: 20%;
+  width: 20%;
 }
 
 /******************
    MAIN
 ******************/
 main {
-    grid-area: main;
-    margin-top: f.em(130px);
-    // @include mix.debug($color: blue);
+  grid-area: main;
+  margin-top: f.em(130px);
+  // @include mix.debug($color: blue);
 }
 
 #inner-home,
 #inner-about-me {
-    display: grid;
-
+  display: grid;
 }
 
 .col-span-2 {
-    grid-column: span 2;
-
+  grid-column: span 2;
 }
 
-
 #inner-home {
-    gap: f.em(20px);
-    grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: 1fr 120px 1fr;
-    margin-bottom: f.em(8px);
+  gap: f.em(20px);
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: 1fr 120px 1fr;
+  margin-bottom: f.em(8px);
 }
 
 .top-home {
-    @include mix.flexy($just: space-between);
+  @include mix.flexy($just: space-between);
 }
 
 #home-bg,
 #home-bottom,
 #portfolio-bg {
-    width: f.em(170px);
+  width: f.em(170px);
 }
 
 .sam-img-home {
-    width: f.em(150px);
+  width: f.em(150px);
 }
 
 .full-name {
-    position: relative;
-    grid-column: 1/3;
-    transform: translate(-9px, -72px);
-    margin-bottom: f.em(30px);
+  position: relative;
+  grid-column: 1/3;
+  transform: translate(-9px, -72px);
+  margin-bottom: f.em(30px);
 }
 
 .my-names li {
-    margin: f.em(5px) 0;
+  margin: f.em(5px) 0;
 }
 
 .sam-colour,
 .sam-gold {
-    width: f.em(100px);
-
+  width: f.em(100px);
 }
 
 .atkin-colour,
 .mod-colour,
 .atkin-gold,
 .mod-gold {
-    width: f.em(120px);
+  width: f.em(120px);
 }
 
 .nam-colour,
 .nam-gold {
-    position: absolute;
-    left: f.em(16px);
+  position: absolute;
+  left: f.em(16px);
 }
 
 .role-bottom-bg {
-    @include mix.flexy($just: space-between);
-    margin-top: f.em(19px);
+  @include mix.flexy($just: space-between);
+  margin-top: f.em(19px);
 }
 
 .creative {
-    width: calc(100% - 170px);
-    align-self: flex-end;
-
+  width: calc(100% - 170px);
+  align-self: flex-end;
 }
 
 #home-bottom {
-    transform: rotate(180deg);
-    // @include mix.debug($color: rgb(24, 170, 95));
+  transform: rotate(180deg);
+  // @include mix.debug($color: rgb(24, 170, 95));
 }
 
 /*********************************************
           PORTFOLIO SECTION
 **********************************************/
 #portfolio {
-    padding: 0;
-    margin-top: f.em(55px);
-
+  padding: 0;
+  margin-top: f.em(55px);
 }
 
 #inner-portfolio {
-    position: relative;
-    // margin-bottom: f.em(32px);
-    // @include mix.debug($color: rgb(233, 51, 10));
+  position: relative;
+  // margin-bottom: f.em(32px);
+  // @include mix.debug($color: rgb(233, 51, 10));
 }
 
 .portfolio-header {
-    position: relative;
-    width: 100%;
-    // @include mix.debug($color: rgb(4, 184, 34));
+  position: relative;
+  width: 100%;
+  // @include mix.debug($color: rgb(4, 184, 34));
 }
 
 .active-proj {
-    border-bottom: f.em(2px) solid $gold;
+  border-bottom: f.em(2px) solid $gold;
 }
 
 .slide-nav {
-    @include mix.flexy($just: center);
-    margin-top: f.em(-15px);
-    margin-bottom: f.em(2px);
-    transform: translateY(f.em(-100px));
+  @include mix.flexy($just: center);
+  margin-top: f.em(-15px);
+  margin-bottom: f.em(2px);
+  transform: translateY(f.em(-100px));
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translateY(f.em(-150px));
+  }
 }
 
 .slide-nav li {
-    margin: 0 5px;
-    padding: f.em(3px) f.em(16px);
-    height: f.em(30px);
+  margin: 0 5px;
+  padding: f.em(3px) f.em(16px);
+  height: f.em(30px);
+  @include mix.mqDesk('tablet-portrait') {
+    padding: f.em(3px) f.em(5px);
+    height: f.em(20px);
+  }
 }
 
 .projects-container {
-    width: 100%;
-    position: relative;
-    height: fit-content;
-    transform: translateY(f.em(-90px));
-    // @include mix.debug($color: rgb(235, 221, 28));
-
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  transform: translateY(f.em(-90px));
+  // @include mix.debug($color: rgb(235, 221, 28));
 }
 
 .proj-viewport {
-    width: 318px;
-    overflow: hidden;
-    // @include mix.debug($color: rgb(28, 235, 80));
+  width: 318px;
+  overflow: hidden;
+  @include mix.mqDesk('tablet-portrait') {
+    width: 725px;
+  }
+  // @include mix.debug($color: rgb(28, 235, 80));
 }
 
 .project-slider {
-    width: 100%;
-    display: block;
-    @extend %marg-cen;
-    // @include mix.debug($color: rgb(235, 28, 28));
+  width: 100%;
+  // display: flex;
+  display: block;
+  @extend %marg-cen;
+  // @include mix.debug($color: rgb(235, 28, 28));
 }
 
 .project-container,
 .logo-container {
-    width: 100%;
-    height: f.em(293px);
-    margin-bottom: f.em(40px);
-    @include mix.flexy($dir: column, $just: space-evenly);
-    @include mix.bg-proj-cont-grad;
-    border: solid 3px $black;
-    // @include mix.debug($color: rgb(28, 114, 235));
-
+  width: 100%;
+  height: f.em(293px);
+  margin-bottom: f.em(40px);
+  @include mix.flexy($dir: column, $just: space-evenly);
+  @include mix.bg-proj-cont-grad;
+  border: solid 3px $black;
+  // @include mix.debug($color: rgb(28, 114, 235));
+  @include mix.mqDesk('tablet-portrait') {
+    height: f.em(650px);
+    margin-bottom: f.em(50px);
+  }
 }
 
 .logo-container {
-    @include mix.bg-proj-logo-grad;
-    // @include mix.debug($color: rgb(28, 114, 235));
-
+  @include mix.bg-proj-logo-grad;
+  // @include mix.debug($color: rgb(28, 114, 235));
 }
 
 .project-img-links {
-    width: f.em(310px);
-    height: f.em(230px);
-    @include mix.flexy($just: space-between);
-    margin: 0 auto;
+  width: f.em(310px);
+  height: f.em(230px);
+  @include mix.flexy($just: space-between);
+  margin: 0 auto;
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(700px);
+    height: f.em(500px);
+  }
 }
 
 .proj-img {
-    width: f.em(108px);
-    margin-left: f.em(90px);
-    // @include mix.debug($color: pink);
+  width: f.em(108px);
+  margin-left: f.em(90px);
+  // @include mix.debug($color: pink);
 
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(240px);
+    margin-left: f.em(120px);
+  }
 }
 
 .taller-proj {
-    width: f.em(72px);
-    margin-left: f.em(110px);
-
+  width: f.em(72px);
+  margin-left: f.em(110px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(150px);
+    margin-left: f.em(220px);
+  }
 }
 
 .proj-4 .taller-proj {
-    width: f.em(63px);
-
+  width: f.em(63px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(140px);
+    margin-left: f.em(220px);
+  }
 }
-
 
 .proj-7 .taller-proj {
-    width: f.em(78px);
+  width: f.em(78px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(170px);
+    margin-left: f.em(150px);
+  }
 }
 
-
 .square-5 {
-    width: f.em(208px);
-    margin-left: f.em(30px);
-
+  width: f.em(208px);
+  margin-left: f.em(30px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(450px);
+    margin-left: f.em(20px);
+  }
 }
 
 .square-6 {
-    width: f.em(220px);
-    margin-left: f.em(18px);
-
+  width: f.em(220px);
+  margin-left: f.em(18px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(450px);
+    margin-left: f.em(20px);
+  }
 }
 
 .square-8 {
-    width: f.em(207px);
+  width: f.em(207px);
+  margin-left: f.em(20px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(450px);
     margin-left: f.em(20px);
+  }
 }
 
-
 .active-slide-proj {
-    margin: 0 f.em(20px);
+  margin: 0 f.em(20px);
 }
 
 .proj-divider {
-    display: none;
+  display: none;
 }
 
 .proj-8 .info-head {
-    width: 93%;
-    @extend %marg-cen;
+  width: 93%;
+  @extend %marg-cen;
 }
 
-
-
 .proj-nav {
-
-    width: f.em(56px);
-    height: f.em(150px);
-    padding: f.em(2px);
-    margin-right: f.em(10px);
-    margin-top: f.em(5px);
+  width: f.em(56px);
+  height: f.em(150px);
+  padding: f.em(2px);
+  margin-right: f.em(10px);
+  margin-top: f.em(5px);
+  // @include mix.debug($color: rgb(183, 235, 28));
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(150px);
+    height: f.em(450px);
+    margin-right: f.em(30px);
     // @include mix.debug($color: rgb(183, 235, 28));
-
+  }
 }
 
 .project-info,
 .logo-info {
-    height: 69px;
-    width: 100%;
-    @include mix.bg-proj-info;
-    @include mix.box-shdo($in: inset, $blur: 7px, $sphd: 0, $colour: $red);
-    // @include mix.debug($color: rgb(235, 59, 28));
+  height: 69px;
+  width: 100%;
+  @include mix.bg-proj-info;
+  @include mix.box-shdo($in: inset, $blur: 7px, $sphd: 0, $colour: $red);
+  // @include mix.debug($color: rgb(235, 59, 28));
+
+  @include mix.mqDesk('tablet-portrait') {
+    height: 115px;
+  }
 }
 
 .logo-info {
-    height: 125px;
+  height: 125px;
+  @include mix.mqDesk('tablet-portrait') {
+    height: 215px;
+    transform: translateY(70px);
+  }
 }
 
 .made-with {
-    height: 40px;
-    @include mix.flexy();
-    padding: 0 f.em(2px);
-    // @include mix.debug($color: rgb(68, 238, 244));
-
+  height: 40px;
+  @include mix.flexy();
+  padding: 0 f.em(2px);
+  // @include mix.debug($color: rgb(68, 238, 244));
+  @include mix.mqDesk('tablet-portrait') {
+    height: 60px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: f.em(5px);
+  }
 }
 
 .created-with {
-    width: 32%;
-    margin-right: f.em(5px);
-    align-self: center;
+  width: 32%;
+  margin-right: f.em(5px);
+  align-self: center;
+  @include mix.mqDesk('tablet-portrait') {
+    width: 25%;
+  }
 }
-
 
 .logo-img {
-    width: 308px;
-    height: 268px;
-    // @include mix.debug($color: rgb(100, 68, 244));
+  width: 308px;
+  height: 268px;
+  // @include mix.debug($color: rgb(100, 68, 244));
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(500px);
+    height: f.em(350px);
+    margin: f.em(8px) auto;
+  }
 }
-
 
 .logo-way .logo-info {
-    margin-top: f.em(35px);
-    height: f.em(90px);
+  margin-top: f.em(35px);
+  height: f.em(90px);
+
+  @include mix.mqDesk('tablet-portrait') {
+    height: f.em(215px);
+    margin-top: f.em(50px);
+    transform: translateY(51px);
+  }
 }
 
-
-
+.logo-way .logo-img {
+  height: 60px;
+  width: 223px;
+  margin: 32px auto;
+  margin-bottom: 132px;
+  @include mix.mqDesk('tablet-portrait') {
+    height: f.em(300px);
+    width: 350px;
+    margin: f.em(18px) auto 0;
+    margin-bottom: 0;
+  }
+}
 .proj-slider-nav {
-    height: 30px;
-    width: 100%;
-    padding: 0 f.em(2px);
-    overflow: hidden;
-    @include mix.flexy($just: space-between);
-    background: linear-gradient(69deg, $grey, $black, $black, $grey);
-    transform: translateY(15px);
+  height: 30px;
+  width: 100%;
+  padding: 0 f.em(2px);
+  overflow: hidden;
+  @include mix.flexy($just: space-between);
+  background: linear-gradient(69deg, $grey, $black, $black, $grey);
+  transform: translateY(15px);
+  // @include mix.debug($color: rgb(208, 222, 11));
+  @include mix.mqDesk('tablet-portrait') {
+    height: 60px;
     // @include mix.debug($color: rgb(208, 222, 11));
+  }
 }
 
 .arrow-nav {
-    @include mix.flexy($just: space-around, $align: center);
-    width: 150px;
-    margin-right: f.em(5px);
-    // @include mix.debug($color: rgb(11, 131, 222));
+  @include mix.flexy($just: space-around, $align: center);
+  width: 150px;
+  margin-right: f.em(5px);
+  // @include mix.debug($color: rgb(11, 131, 222));
+  @include mix.mqDesk('tablet-portrait') {
+    margin-right: f.em(40px);
+  }
 }
 
 #arrow-right,
 #arrow-left {
-    width: 40px;
-    height: 20px;
-    // margin: f.em(18px) f.em(10px);
+  width: 40px;
+  height: 20px;
+  @include mix.mqDesk('tablet-portrait') {
+    width: 60px;
+    height: 30px;
+  }
 }
 
 #arrow-left {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-
-
 
 #divider {
-    height: 30px;
-    width: 5px;
+  height: 30px;
+  width: 5px;
+  @include mix.mqDesk('tablet-portrait') {
+    height: 40px;
+  }
 }
 
-
-
-
 .ul-navs {
-    width: 120px;
-    @include mix.flexy($dir: column);
-    margin-left: f.em(5px);
-    // @include mix.debug($color: rgb(222, 11, 36));
+  width: 120px;
+  @include mix.flexy($dir: column);
+  margin-left: f.em(5px);
+  // @include mix.debug($color: rgb(222, 11, 36));
+  @include mix.mqDesk('tablet-portrait') {
+    margin-left: f.em(35px);
+  }
 }
 
 .ul-navs,
 .arrow-nav {
-    position: relative;
-    @include mix.br-default($colu: rgb($gold, 0.5));
-    border-radius: $br-rad-lg;
+  position: relative;
+  @include mix.br-default($colu: rgb($gold, 0.5));
+  border-radius: $br-rad-lg;
 }
 
+@include mix.mqDesk('tablet-portrait') {
+  .ul-navs {
+    width: 185px;
+  }
+}
 
 .static,
 .interactive,
 .logos {
-    margin: f.em(5px) 0;
-    height: f.em(30px);
-    @include mix.flexy();
-    // @include mix.debug($color: rgb(180, 222, 11));
-
+  margin: f.em(5px) 0;
+  height: f.em(30px);
+  @include mix.flexy();
+  // @include mix.debug($color: rgb(180, 222, 11));
+  @include mix.mqDesk('tablet-portrait') {
+    margin: f.em(10px) f.em(5px);
+    margin-top: f.em(5px);
+  }
 }
 
 .current-ul-port {
-    margin-top: 0;
+  margin-top: 0;
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(5px);
+  }
 }
 
-
 .balls {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    padding: f.em(2px);
-    margin: f.em(5px) f.em(6px);
-    border-radius: 100%;
-   
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: f.em(2px);
+  margin: f.em(5px) f.em(6px);
+  border-radius: 100%;
+  @include mix.mqDesk('tablet-portrait') {
+    width: 30px;
+    height: 30px;
+    margin: f.em(10px) f.em(6px);
+  }
 }
 
 .sta {
-    background: radial-gradient($rad-grad-1, $rad-grad-2, $black );
+  background: radial-gradient($rad-grad-1, $rad-grad-2, $black);
 }
 
 .inter {
-    background: radial-gradient($rad-grad-orange-1, $rad-grad-orange-2, $black );
+  background: radial-gradient($rad-grad-orange-1, $rad-grad-orange-2, $black);
 }
 
 .log {
-    background: radial-gradient($rad-grad-amber-1, $rad-grad-amber-2, $black );
+  background: radial-gradient($rad-grad-amber-1, $rad-grad-amber-2, $black);
 }
 
 /*Balls active*/
 .active-indiBall {
-    @include mix.gold-bar;
+  @include mix.gold-bar;
 }
 
 /****************************
@@ -554,215 +641,195 @@ main {
 ****************************/
 
 #inner-about-me {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
 }
 
 #about-bg {
-    width: f.em(96px);
-    height: f.em(100px);
+  width: f.em(96px);
+  height: f.em(100px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(270px);
+    height: f.em(320px);
+  }
 }
 
 #inner-about-me p {
-    grid-column: 1/span 2;
+  grid-column: 1 / span 2;
 }
-
 
 .me-about-img {
-    grid-column: 2/3;
-    @include mix.flexy();
+  grid-column: 2/3;
+  @include mix.flexy();
 }
-
-
-
 
 .dev-list,
 .design-list {
-    @include mix.flexy($just: space-evenly, $align: center);
+  @include mix.flexy($just: space-evenly, $align: center);
 }
 
 .dev-web,
 .design-dev {
-    grid-column: 2,
+  grid-column: 2;
 }
-
 
 .dev-list,
 .design-list,
 .skill-head-underline,
 .dev-web {
-    grid-column: 1 /span 2;
+  grid-column: 1 / span 2;
 }
 
 .skill-head-underline {
-    @include mix.flexy($dir: column);
+  @include mix.flexy($dir: column, $just: flex-end);
 }
 
-
-
 .skill-under {
-    height: f.em(2px);
-    width: 260px;
-    margin-left: f.em(37px);
-    @include mix.gold-bar();
+  height: f.em(2px);
+  width: 260px;
+  align-self: flex-end;
+  margin-left: auto;
+  @include mix.gold-bar();
 }
 
 .dev-list li,
 .design-list li {
-    width: 45px;
-    height: 45px;
+  width: 45px;
+  height: 45px;
 }
 
 .web-dev-underline,
 .web-design-underline {
-    display: none;
+  display: none;
 }
 
 .dev-list,
 .design-list {
-    height: f.em(46px);
-    padding: f.em(6px) 0;
-    border-radius: f.em(32px);
-    @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
+  height: f.em(46px);
+  padding: f.em(6px) 0;
+  border-radius: f.em(32px);
+  @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
 }
 
-
 .design-list {
-    @include mix.ul-bg($dir-pix: 275px at center right, $col-1: $ul-rad-grad-1, $col-2: $black);
+  @include mix.ul-bg(
+    $dir-pix: 275px at center right,
+    $col-1: $ul-rad-grad-1,
+    $col-2: $black
+  );
 }
 
 /******************************
     CONTACT ME            
 *******************************/
+#contact-me {
+  margin-top: f.em(15px);
+}
 
 #contact-me-form {
-    width: f.em(310px);
-    transform: translateY(f.em(-100px));
-    // @include mix.debug($color: rgb(98, 46, 220));
-
+  width: f.em(310px);
+  transform: translateY(f.em(-100px));
+  // @include mix.debug($color: rgb(98, 46, 220));
 }
 
 .form-p {
-    @include mix.flexy($just: space-between);
-    margin: f.em(40px) auto;
-    width: 90%;
-    height: f.em(50px);
-
+  @include mix.flexy($just: space-between);
+  margin: f.em(40px) auto;
+  width: 90%;
+  height: f.em(50px);
 }
 
 label {
-    border-bottom: f.em(2px) solid $gold;
-    height: f.em(25px);
-
-
+  border-bottom: f.em(2px) solid $gold;
+  height: f.em(25px);
 }
 
 input,
 textarea {
-    margin-left: (f.em(30px));
-    background: $black;
-    outline: none;
-    border: none;
-    width: f.em(200px);
-    border-radius: f.em(6px);
-    // @include mix.debug($color: rgb(130, 184, 4));
-
-
+  margin-left: (f.em(30px));
+  background: $black;
+  outline: none;
+  border: none;
+  width: f.em(200px);
+  border-radius: f.em(6px);
+  // @include mix.debug($color: rgb(130, 184, 4));
 }
 
 textarea {
-    margin-left: (f.em(15px));
-    transform: translateY(-2px);
-    height: f.em(21px);
-
+  margin-left: (f.em(15px));
+  transform: translateY(-2px);
+  height: f.em(21px);
 }
 
-input[type="text"]:focus,
+input[type='text']:focus,
 textarea:focus {
-    background: $black;
-    color: $gold;
+  background: $black;
+  color: $gold;
 }
 
-
 textarea:focus {
-    height: f.em(60px);
-    transform: translateY(-38px);
-    // @include mix.debug($color: rgb(184, 181, 4));
-
-
+  height: f.em(60px);
+  transform: translateY(-38px);
+  // @include mix.debug($color: rgb(184, 181, 4));
 }
 
 textarea::-webkit-scrollbar {
-    width: f.em(10px);
+  width: f.em(10px);
 }
 
 textarea::-webkit-scrollbar-track {
-    @include mix.box-shdo($in: inset, $blur: f.em(3px), $colour: $gold);
-    border-radius: f.em(8px);
+  @include mix.box-shdo($in: inset, $blur: f.em(3px), $colour: $gold);
+  border-radius: f.em(8px);
 }
 
 textarea::-webkit-scrollbar-thumb {
-    @include mix.box-shdo($in: inset, $blur: f.em(3px), $colour: $red);
-    border-radius: f.em(5px);
+  @include mix.box-shdo($in: inset, $blur: f.em(3px), $colour: $red);
+  border-radius: f.em(5px);
 }
 
 textarea::-webkit-scrollbar-corner,
 textarea::-webkit-resizer {
-    background: $black;
-
+  background: $black;
 }
-
-
-
 
 #submit {
-    background: $black;
-    width: f.em(80px);
-    margin: 0 auto;
-    @include mix.br-default($gold);
-    border-radius: $br-rad;
-    transform: translate(-2px, -18px);
-
+  background: $black;
+  width: f.em(80px);
+  margin: 0 auto;
+  @include mix.br-default($gold);
+  border-radius: $br-rad;
+  transform: translate(-2px, -18px);
 }
-
-
 
 /******************************
             FOOTER
 *******************************/
 
-
 footer {
-    grid-area: footer;
-    // height: 60px;
-    background: $black;
+  grid-area: footer;
+  // height: 60px;
+  background: $black;
 
-    bottom: 0;
-    width: 100%;
-    z-index: 5;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
 
-    // @include mix.debug($color: rgb(184, 4, 172));
-
+  // @include mix.debug($color: rgb(184, 4, 172));
 }
 
 .contact-links {
-    margin-top: 0;
-    @include mix.flexy($just: center);
+  margin-top: 0;
+  @include mix.flexy($just: center);
 }
 
 .social-links {
-    height: 30px;
-    width: 30px;
-    margin: 0 f.em(10px);
+  height: 30px;
+  width: 30px;
+  margin: 0 f.em(10px);
 }
 
 small {
-    margin: f.em(3px) auto 0;
-    display: block;
-    width: 80%;
+  margin: f.em(3px) auto 0;
+  display: block;
+  width: 80%;
 }
-
-
-
-
-
