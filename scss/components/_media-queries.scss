@@ -3,205 +3,180 @@
 @use '../utilities/functions' as f;
 @use '../utilities/mixins' as mix;
 
-
-
 /***************************
   CONTAINERS MEDIA QUERIES
 *********************************/
 /***********NAV*******************/
 .sam-logo,
 .hamburger {
-
   @include mix.mqDesk('tablet-portrait') {
     display: none;
-
   }
-
 }
 
 .main-header {
   @include mix.mqDesk('tablet-portrait') {
     @include mix.bg-black-grad-desk;
-
   }
 
   @include mix.mqDesk('lg-desktop-width') {
-
     height: 65px;
-
   }
 
   @include mix.mqDesk('xx-lg-desktop-width') {
-
     height: 75px;
-
   }
 
   @include mix.mqDesk('xxx-lg-desktop-width') {
-
     height: 95px;
-
   }
 }
 
-
 /*********HOME************/
 .role-bottom-bg {
-    @include mix.mqMobile('xxx-s-mobile-width', 'xx-short-mobile-height') {
-      margin-top: f.em(90px);
-    }
-  
-    @include mix.mqDesk('tablet-portrait') {
-      margin-top: f.em(280px);
-    }
-  
-    @include mix.mqDesk('tablet-landscape') {
-      margin-top: f.em(25px);
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      margin-top: f.em(60px);
-    }
+  @include mix.mqMobile('xxx-s-mobile-width', 'xx-short-mobile-height') {
+    margin-top: f.em(90px);
   }
-  
-  #home-bg,
-  #home-bottom,
-  #portfolio-bg{
-    @include mix.mqDesk('tablet-portrait') {
-      width: f.em(270px);
-  
-    }
+
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(280px);
   }
-  
-  #home-bg {
-    @include mix.mqDesk('tablet-portrait') {
-      transform: translate(f.em(53px), f.em(54px)) scale(1.4);
-  
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      transform: translate(f.em(73px), f.em(48px)) scale(1.5);
-    }
+
+  @include mix.mqDesk('tablet-landscape') {
+    margin-top: f.em(25px);
   }
-  
-  .sam-img-home {
-    @include mix.mqDesk('tablet-portrait') {
-      width: f.em(300px);
-      margin-top: f.em(10px);
-  
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      width: f.em(375px);
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      margin-top: f.em(20px);
-    }
-  
-  
+
+  @include mix.mqDesk('lg-desktop-width') {
+    margin-top: f.em(60px);
   }
-  
-  .full-name {
-    @include mix.mqDesk('tablet-portrait') {
-      transform: translate(f.em(-9px), 0);
-      margin-bottom: 0;
-    }
-  
-    @include mix.mqDesk('tablet-landscape') {
-      transform: translate(f.em(-9px), f.em(-70px));
-      margin-bottom: 0;
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      transform: translate(f.em(-9px), 0);
-      margin-bottom: 0;
-    }
+}
+
+#home-bg,
+#home-bottom,
+#portfolio-bg {
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(270px);
   }
-  
-  .my-names li {
-    @include mix.mqDesk('tablet-portrait') {
-      margin: f.em(8px) 0;
-    }
+}
+
+@include mix.mqDesk('tablet-landscape') {
+  #portfolio-bg {
+    width: f.em(400px);
   }
-  
-  
-  .sam-colour,
-  .sam-gold {
-    @include mix.mqDesk('tablet-portrait') {
-      width: f.em(200px);
-    }
-  
-    @include mix.mqDesk('tablet-landscape') {
-      width: f.em(175px);
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      width: f.em(220px);
-    }
-  
+}
+
+#home-bg {
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translate(f.em(53px), f.em(54px)) scale(1.4);
   }
-  
-  .atkin-colour,
-  .mod-colour,
-  .atkin-gold,
-  .mod-gold {
-    @include mix.mqDesk('tablet-portrait') {
-      width: f.em(340px);
-    }
-  
-    @include mix.mqDesk('tablet-landscape') {
-      width: f.em(275px);
-    }
-  
-    @include mix.mqDesk('lg-desktop-width') {
-      width: f.em(400px);
-    }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    transform: translate(f.em(73px), f.em(48px)) scale(1.5);
   }
-  
-  .creative {
-    @include mix.mqDesk('tablet-portrait') {
-      width: calc(100% - 270px);
-  
-    }
-  
+}
+
+.sam-img-home {
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(300px);
+    margin-top: f.em(10px);
   }
-  
-  .nam-colour,
-  .nam-gold {
-    @include mix.mqDesk('lg-desktop-width') {
-  
-      @include mix.flexy();
-    }
-  
+
+  @include mix.mqDesk('lg-desktop-width') {
+    width: f.em(375px);
   }
-  
-  li.atkin-colour,
-  li.atkin-gold {
-    @include mix.mqDesk('lg-desktop-width') {
-  
-      margin-top: f.em(50px);
-  
-    }
-  
+
+  @include mix.mqDesk('lg-desktop-width') {
+    margin-top: f.em(20px);
   }
-  
-  
-  li.mod-colour,
-  li.mod-gold {
-    @include mix.mqDesk('lg-desktop-width') {
-  
-      margin-top: f.em(46px);
-    }
-  
+}
+
+.full-name {
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translate(f.em(-9px), 0);
+    margin-bottom: 0;
   }
-  
-  
-  li.atkin-colour,
-  li.atkin-gold,
-  li.mod-colour,
-  li.mod-gold {
-    @include mix.mqDesk('lg-desktop-width') {
-      margin-left: f.em(20px);
-    }
+
+  @include mix.mqDesk('tablet-landscape') {
+    transform: translate(f.em(-9px), f.em(-70px));
+    margin-bottom: 0;
   }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    transform: translate(f.em(-9px), 0);
+    margin-bottom: 0;
+  }
+}
+
+.my-names li {
+  @include mix.mqDesk('tablet-portrait') {
+    margin: f.em(8px) 0;
+  }
+}
+
+.sam-colour,
+.sam-gold {
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(200px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(175px);
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    width: f.em(220px);
+  }
+}
+
+.atkin-colour,
+.mod-colour,
+.atkin-gold,
+.mod-gold {
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(340px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(275px);
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    width: f.em(400px);
+  }
+}
+
+.creative {
+  @include mix.mqDesk('tablet-portrait') {
+    width: calc(100% - 270px);
+  }
+}
+
+.nam-colour,
+.nam-gold {
+  @include mix.mqDesk('lg-desktop-width') {
+    @include mix.flexy();
+  }
+}
+
+li.atkin-colour,
+li.atkin-gold {
+  @include mix.mqDesk('lg-desktop-width') {
+    margin-top: f.em(50px);
+  }
+}
+
+li.mod-colour,
+li.mod-gold {
+  @include mix.mqDesk('lg-desktop-width') {
+    margin-top: f.em(46px);
+  }
+}
+
+li.atkin-colour,
+li.atkin-gold,
+li.mod-colour,
+li.mod-gold {
+  @include mix.mqDesk('lg-desktop-width') {
+    margin-left: f.em(20px);
+  }
+}

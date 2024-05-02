@@ -37,7 +37,7 @@ textarea,
 .logo-head,
 .contact-h2,
 .need-website,
-.balls:hover::before {
+small {
   text-align: center;
 }
 
@@ -179,6 +179,11 @@ textarea,
     @include mix.text($size: f.em(50px));
     transform: translateY(f.em(-60px));
   }
+
+  @include mix.mqDesk('tablet-landscape') {
+    // @include mix.text($size: f.em(50px));
+    transform: translateY(f.em(-85px));
+  }
 }
 
 @include mix.mqDesk('tablet-portrait') {
@@ -220,6 +225,12 @@ textarea,
     transform: translate(11px, -162px);
     font-size: f.em(25px);
   }
+
+  @include mix.mqDesk('tablet-landscape') {
+    margin: 0;
+    transform: none;
+    text-align: center;
+  }
 }
 
 @include mix.mqDesk('tablet-portrait') {
@@ -257,11 +268,21 @@ textarea,
   @include mix.mqDesk('tablet-portrait') {
     font-size: f.em(25px);
   }
+
+  @include mix.mqDesk('tablet-landscape') {
+    font-size: f.em(20px);
+  }
 }
 
 @include mix.mqDesk('tablet-portrait') {
   .proj-8 .info-head {
     font-size: (20px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    .proj-8 .info-head {
+      font-size: (18px);
+    }
   }
 }
 
@@ -281,7 +302,18 @@ textarea,
 .created-with {
   @include mix.text($size: f.em(14px), $l-height: f.em(24px));
   @include mix.mqDesk('tablet-portrait') {
-    @include mix.text($size: f.em(24px), $l-height: f.em(34px));
+    @include mix.text($size: f.em(22px), $l-height: f.em(20px));
+    margin-left: f.em(5px);
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    @include mix.text($size: f.em(16px), $l-height: f.em(20px));
+    margin-left: f.em(5px);
+  }
+}
+
+@include mix.mqDesk('tablet-landscape') {
+  .created-with.proj-7 {
+    @include mix.text($size: f.em(12px), $l-height: f.em(18px));
     margin-left: f.em(5px);
   }
 }
@@ -375,11 +407,19 @@ textarea,
 *******************/
 .contact-h2 {
   transform: translateY(f.em(-80px));
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(45px), $l-height: f.em(50px));
+    transform: translateY(f.em(-100px));
+  }
 }
 
 .need-website {
   @include mix.text($size: f.em(11px), $l-height: f.em(24px));
   transform: translateY(f.em(-138px));
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(20px), $l-height: f.em(24px));
+    transform: translateY(f.em(-270px));
+  }
 }
 
 ::placeholder,
@@ -392,4 +432,24 @@ textarea::placeholder,
 textarea::-moz-placeholder,
 textarea::-webkit-placeholder {
   font-style: italic;
+}
+
+//MEDIA QUERIS FORM
+@include mix.mqDesk('tablet-portrait') {
+  label {
+    @include mix.text($size: f.em(30px), $l-height: f.em(40px));
+  }
+
+  #submit {
+    font-size: f.em(30px);
+  }
+}
+
+/*******************
+    FOOTER
+*******************/
+@include mix.mqDesk('tablet-portrait') {
+  small {
+    font-size: f.em(20px);
+  }
 }

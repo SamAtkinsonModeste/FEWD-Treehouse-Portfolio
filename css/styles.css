@@ -555,6 +555,12 @@ p {
   margin-left: auto;
 }
 
+@media (min-width: 768px) {
+  #contact-bg {
+    width: 353px;
+    height: 269px;
+  }
+}
 .hamburger,
 #arrow-right,
 #arrow-left,
@@ -794,6 +800,11 @@ main {
     transform: translateY(-9.375em);
   }
 }
+@media (min-width: 1024px) {
+  .slide-nav {
+    transform: translateY(-15.625em);
+  }
+}
 
 .slide-nav li {
   margin: 0 5px;
@@ -813,6 +824,11 @@ main {
   height: fit-content;
   transform: translateY(-5.625em);
 }
+@media (min-width: 1024px) {
+  .projects-container {
+    transform: translateY(-14.375em);
+  }
+}
 
 .proj-viewport {
   width: 318px;
@@ -823,10 +839,15 @@ main {
     width: 725px;
   }
 }
+@media (min-width: 1024px) {
+  .proj-viewport {
+    width: 940px;
+  }
+}
 
 .project-slider {
   width: 100%;
-  display: block;
+  display: flex;
 }
 
 .project-container,
@@ -850,6 +871,13 @@ main {
     margin-bottom: 3.125em;
   }
 }
+@media (min-width: 1024px) {
+  .project-container,
+  .logo-container {
+    height: 25em;
+    margin-bottom: 0;
+  }
+}
 
 .logo-container {
   background: -webkit-linear-gradient(312deg, #545454, #2B2B2B 4%, #CEC6C6 21%, #CEC6C6 46%, #CEC6C6 79%, #2B2B2B 97%, #545454 100%);
@@ -869,6 +897,11 @@ main {
   .project-img-links {
     width: 43.75em;
     height: 31.25em;
+  }
+}
+@media (min-width: 768px) {
+  .project-img-links {
+    display: none;
   }
 }
 
@@ -951,10 +984,6 @@ main {
   margin: 0 1.25em;
 }
 
-.proj-divider {
-  display: none;
-}
-
 .proj-8 .info-head {
   width: 93%;
 }
@@ -971,6 +1000,11 @@ main {
     width: 9.375em;
     height: 28.125em;
     margin-right: 1.875em;
+  }
+}
+@media (min-width: 1024px) {
+  .proj-nav {
+    display: none;
   }
 }
 
@@ -991,6 +1025,11 @@ main {
   }
 }
 
+@media (min-width: 1024px) {
+  .project-info {
+    display: none;
+  }
+}
 .logo-info {
   height: 125px;
 }
@@ -1010,6 +1049,13 @@ main {
   .made-with {
     height: 60px;
     width: 80%;
+    margin: 0 auto;
+    margin-bottom: 0.3125em;
+  }
+}
+@media (min-width: 1024px) {
+  .made-with {
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 0.3125em;
   }
@@ -1065,6 +1111,109 @@ main {
   }
 }
 
+/**************************
+PORTFOLIO LAYOUT DESKTOP
+***************************/
+.proj-links-info-desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .proj-links-info-desktop {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    width: 920px;
+    margin: 0 auto;
+    height: 405px;
+    padding: 0.3125em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .proj-img-desk {
+    position: relative;
+    width: 200px;
+  }
+  .proj-img-desk img {
+    position: absolute;
+    top: -14px;
+  }
+  .proj-img-desk.taller-proj {
+    width: 124px;
+  }
+  .proj-img-desk.taller-proj-4 {
+    width: 110px;
+  }
+  .proj-img-desk.taller-proj img,
+  .proj-img-desk.taller-proj-4 img {
+    top: -2px;
+  }
+  .proj-img-desk.square-5,
+  .proj-img-desk.square-6,
+  .proj-img-desk.square-8 {
+    width: 350px;
+  }
+  .proj-img-desk.square-5 img,
+  .proj-img-desk.square-6 img {
+    top: 0;
+  }
+  .proj-img-desk.square-6 img,
+  .proj-img-desk.square-8 img {
+    top: 22px;
+  }
+  .proj-img-desk.taller-proj-7 {
+    width: 133px;
+  }
+  .proj-img-desk.taller-proj-7 img {
+    top: -1px;
+  }
+  .desk-proj-info {
+    background: -webkit-linear-gradient(312deg, #545454, #2B2B2B 4%, #000000 21%, #000000 46%, #000000 79%, #2B2B2B 97%, #545454 100%);
+    background: -moz-linear-gradient(312deg, #545454, #2B2B2B 4%, #000000 21%, #000000 46%, #000000 79%, #2B2B2B 97%, #545454 100%);
+    background: -o-linear-gradient(312deg, #545454, #2B2B2B 4%, #000000 21%, #000000 46%, #000000 79%, #2B2B2B 97%, #545454 100%);
+    background: linear-gradient(312deg, #545454, #2B2B2B 4%, #000000 21%, #000000 46%, #000000 79%, #2B2B2B 98%, #545454 110%);
+    border: 0.1875em solid #000000;
+    height: 350px;
+    width: 480px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .project-info-desk {
+    background: -webkit-linear-gradient(348deg, #000000, #2B2B2B 64%, #000000);
+    background: -moz-linear-gradient(348deg, #000000, #2B2B2B 64%, #000000);
+    background: -o-linear-gradient(348deg, #000000, #2B2B2B 64%, #000000);
+    background: linear-gradient(348deg, #000000, #2B2B2B 64%, #000000);
+    width: 400px;
+    margin: 0 auto 1.25em;
+    border: 3px solid #000000;
+  }
+  .created-with.proj-7 {
+    width: 20%;
+    margin-right: 0;
+  }
+  .proj-divider {
+    display: block;
+    height: 0.3125em;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 250px;
+    background: -webkit-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    background: -moz-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    background: -o-linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+    background: linear-gradient(#a47a1e, #d3a84c 23%, #ffec94 43%, #e6be69 57%, #ffd87c 77%, #c29c49 91%, #b58f3e 95%);
+  }
+  .git-browser-desk {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/********************
+PORTFOLIO NAV CONTROLS
+*********************/
 .proj-slider-nav {
   height: 30px;
   width: 100%;
@@ -1290,6 +1439,13 @@ main {
   width: 45px;
   height: 45px;
 }
+@media (min-width: 768px) {
+  .dev-list li,
+  .design-list li {
+    width: 70px;
+    height: 70px;
+  }
+}
 
 .web-dev-underline,
 .web-design-underline {
@@ -1319,12 +1475,33 @@ main {
   background: -o-radial-gradient(275px at center left, #1c1d26, #000000);
   background: radial-gradient(275px at center left, #1c1d26, #000000);
 }
+@media (min-width: 768px) {
+  .dev-list,
+  .design-list {
+    padding: 2.5em 0;
+    border-radius: 2.625em;
+  }
+}
 
+@media (min-width: 768px) {
+  .dev-list {
+    transform: translateY(-101px);
+  }
+}
 .design-list {
   background: -webkit-radial-gradient(275px at center right, #1c1d26, #000000);
   background: -moz-radial-gradient(275px at center right, #1c1d26, #000000);
   background: -o-radial-gradient(275px at center right, #1c1d26, #000000);
   background: radial-gradient(275px at center right, #1c1d26, #000000);
+}
+@media (min-width: 768px) {
+  .design-list {
+    transform: translateY(-101px);
+    background: -webkit-radial-gradient(275px at center left, #1c1d26, #000000);
+    background: -moz-radial-gradient(275px at center left, #1c1d26, #000000);
+    background: -o-radial-gradient(275px at center left, #1c1d26, #000000);
+    background: radial-gradient(275px at center left, #1c1d26, #000000);
+  }
 }
 
 /******************************
@@ -1338,6 +1515,11 @@ main {
   width: 19.375em;
   transform: translateY(-6.25em);
 }
+@media (min-width: 768px) {
+  #contact-me-form {
+    width: 31.25em;
+  }
+}
 
 .form-p {
   display: flex;
@@ -1346,10 +1528,22 @@ main {
   width: 90%;
   height: 3.125em;
 }
+@media (min-width: 768px) {
+  .form-p {
+    width: 100%;
+    margin: 10em auto;
+    transform: translateY(-300px);
+  }
+}
 
 label {
   border-bottom: 0.125em solid #D4AF37;
   height: 1.5625em;
+}
+@media (min-width: 768px) {
+  label {
+    padding-bottom: 1.875em;
+  }
 }
 
 input,
@@ -1361,11 +1555,27 @@ textarea {
   width: 12.5em;
   border-radius: 0.375em;
 }
+@media (min-width: 768px) {
+  input,
+  textarea {
+    margin-left: 0.625em;
+  }
+}
 
+@media (min-width: 768px) {
+  input {
+    transform: translate(18px, -10px);
+  }
+}
 textarea {
   margin-left: 0.9375em;
   transform: translateY(-2px);
   height: 1.3125em;
+}
+@media (min-width: 768px) {
+  textarea {
+    transform: translate(87px, -67px);
+  }
 }
 
 input[type=text]:focus,
@@ -1377,6 +1587,11 @@ textarea:focus {
 textarea:focus {
   height: 3.75em;
   transform: translateY(-38px);
+}
+@media (min-width: 768px) {
+  textarea:focus {
+    transform: translate(87px, -134px);
+  }
 }
 
 textarea::-webkit-scrollbar {
@@ -1406,6 +1621,12 @@ textarea::-webkit-resizer {
   border-radius: 0.25em;
   transform: translate(-2px, -18px);
 }
+@media (min-width: 768px) {
+  #submit {
+    width: 5.625em;
+    transform: translate(-14px, -350px);
+  }
+}
 
 /******************************
             FOOTER
@@ -1429,11 +1650,23 @@ footer {
   width: 30px;
   margin: 0 0.625em;
 }
+@media (min-width: 768px) {
+  .social-links {
+    width: 50px;
+    height: 50px;
+    margin: 0 2.5em;
+    transform: translateY(-300px);
+  }
+}
 
 small {
   margin: 0.1875em auto 0;
   display: block;
-  width: 80%;
+}
+@media (min-width: 768px) {
+  small {
+    margin: 0.625em auto 0;
+  }
 }
 
 img {
@@ -1507,6 +1740,12 @@ img {
     transform: translate(44px, -178px);
   }
 }
+@media (min-width: 1024px) {
+  .chain-link {
+    margin: 0.625em auto;
+    transform: none;
+  }
+}
 
 .browser,
 .git {
@@ -1520,6 +1759,13 @@ img {
     transform: translate(34px, -149px);
   }
 }
+@media (min-width: 1024px) {
+  .browser,
+  .git {
+    margin: 0;
+    transform: translateY(25px);
+  }
+}
 
 .git {
   margin-top: 0.625em;
@@ -1529,7 +1775,19 @@ img {
     margin-top: 2.5em;
   }
 }
+@media (min-width: 1024px) {
+  .git {
+    margin: 0;
+    transform: translateY(16px);
+  }
+}
 
+@media (min-width: 1024px) {
+  .git-browser-desk.p-8 .git,
+  .git-browser-desk.p-8 .browser {
+    transform: translateY(-4px);
+  }
+}
 .html-made,
 .css-made,
 .sass-made,
@@ -1621,7 +1879,7 @@ textarea,
 .logo-head,
 .contact-h2,
 .need-website,
-.balls:hover::before {
+small {
   text-align: center;
 }
 
@@ -1779,6 +2037,11 @@ textarea,
     transform: translateY(-3.75em);
   }
 }
+@media (min-width: 1024px) {
+  .head-port {
+    transform: translateY(-5.3125em);
+  }
+}
 
 @media (min-width: 768px) {
   .static-li,
@@ -1814,6 +2077,13 @@ textarea,
   .live-text {
     transform: translate(11px, -162px);
     font-size: 1.5625em;
+  }
+}
+@media (min-width: 1024px) {
+  .live-text {
+    margin: 0;
+    transform: none;
+    text-align: center;
   }
 }
 
@@ -1861,10 +2131,21 @@ textarea,
     font-size: 1.5625em;
   }
 }
+@media (min-width: 1024px) {
+  .proj-7 .info-head,
+  .proj-8 .info-head {
+    font-size: 1.25em;
+  }
+}
 
 @media (min-width: 768px) {
   .proj-8 .info-head {
     font-size: 20px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1024px) {
+  .proj-8 .info-head {
+    font-size: 18px;
   }
 }
 @media (min-width: 768px) {
@@ -1886,12 +2167,26 @@ textarea,
 }
 @media (min-width: 768px) {
   .created-with {
-    font-size: 1.5em;
-    line-height: 2.125em;
+    font-size: 1.375em;
+    line-height: 1.25em;
+    margin-left: 0.3125em;
+  }
+}
+@media (min-width: 1024px) {
+  .created-with {
+    font-size: 1em;
+    line-height: 1.25em;
     margin-left: 0.3125em;
   }
 }
 
+@media (min-width: 1024px) {
+  .created-with.proj-7 {
+    font-size: 0.75em;
+    line-height: 1.125em;
+    margin-left: 0.3125em;
+  }
+}
 .way-logo {
   margin: 0.125em 0 0.625em 0;
 }
@@ -1988,11 +2283,25 @@ textarea,
 .contact-h2 {
   transform: translateY(-5em);
 }
+@media (min-width: 768px) {
+  .contact-h2 {
+    font-size: 2.8125em;
+    line-height: 3.125em;
+    transform: translateY(-6.25em);
+  }
+}
 
 .need-website {
   font-size: 0.6875em;
   line-height: 1.5em;
   transform: translateY(-8.625em);
+}
+@media (min-width: 768px) {
+  .need-website {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    transform: translateY(-16.875em);
+  }
 }
 
 ::placeholder,
@@ -2007,6 +2316,23 @@ textarea::-webkit-placeholder {
   font-style: italic;
 }
 
+@media (min-width: 768px) {
+  label {
+    font-size: 1.875em;
+    line-height: 2.5em;
+  }
+  #submit {
+    font-size: 1.875em;
+  }
+}
+/*******************
+    FOOTER
+*******************/
+@media (min-width: 768px) {
+  small {
+    font-size: 1.25em;
+  }
+}
 /***************************
   CONTAINERS MEDIA QUERIES
 *********************************/
@@ -2072,6 +2398,11 @@ textarea::-webkit-placeholder {
   }
 }
 
+@media (min-width: 1024px) {
+  #portfolio-bg {
+    width: 25em;
+  }
+}
 @media (min-width: 768px) {
   #home-bg {
     transform: translate(3.3125em, 3.375em) scale(1.4);

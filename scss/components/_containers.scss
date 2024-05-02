@@ -54,6 +54,13 @@
   margin-left: auto;
 }
 
+@include mix.mqDesk('tablet-portrait') {
+  #contact-bg {
+    width: 353px;
+    height: 269px;
+  }
+}
+
 .hamburger,
 #arrow-right,
 #arrow-left,
@@ -279,6 +286,10 @@ main {
   @include mix.mqDesk('tablet-portrait') {
     transform: translateY(f.em(-150px));
   }
+
+  @include mix.mqDesk('tablet-landscape') {
+    transform: translateY(f.em(-250px));
+  }
 }
 
 .slide-nav li {
@@ -297,21 +308,29 @@ main {
   height: fit-content;
   transform: translateY(f.em(-90px));
   // @include mix.debug($color: rgb(235, 221, 28));
+  @include mix.mqDesk('tablet-landscape') {
+    transform: translateY(f.em(-230px));
+  }
 }
 
 .proj-viewport {
   width: 318px;
   overflow: hidden;
+  // @include mix.debug($color: rgb(28, 235, 80));
   @include mix.mqDesk('tablet-portrait') {
     width: 725px;
   }
-  // @include mix.debug($color: rgb(28, 235, 80));
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: 940px;
+    // @include mix.debug($color: rgb(28, 235, 80));
+  }
 }
 
 .project-slider {
   width: 100%;
-  // display: flex;
-  display: block;
+  display: flex;
+  // display: block;
   @extend %marg-cen;
   // @include mix.debug($color: rgb(235, 28, 28));
 }
@@ -329,6 +348,11 @@ main {
     height: f.em(650px);
     margin-bottom: f.em(50px);
   }
+
+  @include mix.mqDesk('tablet-landscape') {
+    height: f.em(400px);
+    margin-bottom: 0;
+  }
 }
 
 .logo-container {
@@ -341,9 +365,13 @@ main {
   height: f.em(230px);
   @include mix.flexy($just: space-between);
   margin: 0 auto;
+  // @include mix.debug($color: rgb(207, 28, 235));
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(700px);
     height: f.em(500px);
+  }
+  @include mix.mqDesk('tablet-portrait') {
+    display: none;
   }
 }
 
@@ -414,10 +442,6 @@ main {
   margin: 0 f.em(20px);
 }
 
-.proj-divider {
-  display: none;
-}
-
 .proj-8 .info-head {
   width: 93%;
   @extend %marg-cen;
@@ -436,6 +460,10 @@ main {
     margin-right: f.em(30px);
     // @include mix.debug($color: rgb(183, 235, 28));
   }
+
+  @include mix.mqDesk('tablet-landscape') {
+    display: none;
+  }
 }
 
 .project-info,
@@ -448,6 +476,12 @@ main {
 
   @include mix.mqDesk('tablet-portrait') {
     height: 115px;
+  }
+}
+
+@include mix.mqDesk('tablet-landscape') {
+  .project-info {
+    display: none;
   }
 }
 
@@ -467,6 +501,11 @@ main {
   @include mix.mqDesk('tablet-portrait') {
     height: 60px;
     width: 80%;
+    margin: 0 auto;
+    margin-bottom: f.em(5px);
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    width: 100%;
     margin: 0 auto;
     margin-bottom: f.em(5px);
   }
@@ -515,6 +554,111 @@ main {
     margin-bottom: 0;
   }
 }
+
+/**************************
+PORTFOLIO LAYOUT DESKTOP
+***************************/
+.proj-links-info-desktop {
+  display: none;
+  @include mix.mqDesk('tablet-landscape') {
+    @include mix.flexy($disp: flex, $dir: row-reverse, $just: space-around);
+    width: 920px;
+    margin: 0 auto;
+    height: 405px;
+    padding: f.em(5px);
+    // @include mix.debug($color: rgb(251, 243, 88));
+  }
+}
+
+@include mix.mqDesk('tablet-landscape') {
+  .proj-img-desk {
+    position: relative;
+    width: 200px;
+    // @include mix.debug($color: rgb(234, 3, 246));
+  }
+
+  .proj-img-desk img {
+    position: absolute;
+    top: -14px;
+  }
+
+  .proj-img-desk.taller-proj {
+    width: 124px;
+  }
+
+  .proj-img-desk.taller-proj-4 {
+    width: 110px;
+  }
+
+  .proj-img-desk.taller-proj img,
+  .proj-img-desk.taller-proj-4 img {
+    top: -2px;
+  }
+
+  .proj-img-desk.square-5,
+  .proj-img-desk.square-6,
+  .proj-img-desk.square-8 {
+    width: 350px;
+  }
+
+  .proj-img-desk.square-5 img,
+  .proj-img-desk.square-6 img {
+    top: 0;
+  }
+
+  .proj-img-desk.square-6 img,
+  .proj-img-desk.square-8 img {
+    top: 22px;
+  }
+
+  .proj-img-desk.taller-proj-7 {
+    width: 133px;
+  }
+
+  .proj-img-desk.taller-proj-7 img {
+    top: -1px;
+  }
+
+  .desk-proj-info {
+    @include mix.bg-proj-cont-grad;
+    @include mix.br-default($pix: f.em(3px), $colu: $black);
+    height: 350px;
+    width: 480px;
+    align-self: center;
+    @include mix.flexy($dir: column, $just: center);
+  }
+
+  .project-info-desk {
+    @include mix.bg-proj-info;
+    width: 400px;
+    margin: 0 auto f.em(20px);
+    @include mix.br-default($pix: 3px, $styl: solid, $colu: $black);
+  }
+
+  .created-with.proj-7 {
+    width: 20%;
+    margin-right: 0;
+  }
+
+  .proj-divider {
+    display: block;
+    height: f.em(5px);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 250px;
+    @include mix.gold-bar;
+  }
+
+  .git-browser-desk {
+    @include mix.flexy($just: space-between);
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/********************
+PORTFOLIO NAV CONTROLS
+*********************/
 .proj-slider-nav {
   height: 30px;
   width: 100%;
@@ -677,6 +821,9 @@ main {
   grid-column: 2;
 }
 
+@include mix.mqDesk('tablet-portrait') {
+}
+
 .dev-list,
 .design-list,
 .skill-head-underline,
@@ -706,6 +853,11 @@ main {
 .design-list li {
   width: 45px;
   height: 45px;
+
+  @include mix.mqDesk('tablet-portrait') {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 .web-dev-underline,
@@ -726,14 +878,28 @@ main {
   padding: f.em(6px) 0;
   border-radius: f.em(32px);
   @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
+  @include mix.mqDesk('tablet-portrait') {
+    padding: f.em(40px) 0;
+    border-radius: f.em(42px);
+  }
 }
 
+@include mix.mqDesk('tablet-portrait') {
+  .dev-list {
+    transform: translateY(-101px);
+  }
+}
 .design-list {
   @include mix.ul-bg(
     $dir-pix: 275px at center right,
     $col-1: $ul-rad-grad-1,
     $col-2: $black
   );
+
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translateY(-101px);
+    @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
+  }
 }
 
 /******************************
@@ -747,6 +913,10 @@ main {
   width: f.em(310px);
   transform: translateY(f.em(-100px));
   // @include mix.debug($color: rgb(98, 46, 220));
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(500px);
+    // @include mix.debug($color: rgb(98, 46, 220));
+  }
 }
 
 .form-p {
@@ -754,11 +924,21 @@ main {
   margin: f.em(40px) auto;
   width: 90%;
   height: f.em(50px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: 100%;
+    margin: f.em(160px) auto;
+    transform: translateY(-300px);
+    // @include mix.debug($color: rgb(111, 247, 15));
+  }
 }
 
 label {
   border-bottom: f.em(2px) solid $gold;
   height: f.em(25px);
+  @include mix.mqDesk('tablet-portrait') {
+    // height: fit-content;
+    padding-bottom: f.em(30px);
+  }
 }
 
 input,
@@ -770,12 +950,25 @@ textarea {
   width: f.em(200px);
   border-radius: f.em(6px);
   // @include mix.debug($color: rgb(130, 184, 4));
+  @include mix.mqDesk('tablet-portrait') {
+    margin-left: f.em(10px);
+    // margin-bottom: f.em(5px);
+  }
+}
+
+@include mix.mqDesk('tablet-portrait') {
+  input {
+    transform: translate(18px, -10px);
+  }
 }
 
 textarea {
   margin-left: (f.em(15px));
   transform: translateY(-2px);
   height: f.em(21px);
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translate(87px, -67px);
+  }
 }
 
 input[type='text']:focus,
@@ -788,6 +981,9 @@ textarea:focus {
   height: f.em(60px);
   transform: translateY(-38px);
   // @include mix.debug($color: rgb(184, 181, 4));
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translate(87px, -134px);
+  }
 }
 
 textarea::-webkit-scrollbar {
@@ -816,6 +1012,11 @@ textarea::-webkit-resizer {
   @include mix.br-default($gold);
   border-radius: $br-rad;
   transform: translate(-2px, -18px);
+
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(90px);
+    transform: translate(-14px, -350px);
+  }
 }
 
 /******************************
@@ -843,10 +1044,18 @@ footer {
   height: 30px;
   width: 30px;
   margin: 0 f.em(10px);
+  @include mix.mqDesk('tablet-portrait') {
+    width: 50px;
+    height: 50px;
+    margin: 0 f.em(40px);
+    transform: translateY(-300px);
+  }
 }
 
 small {
   margin: f.em(3px) auto 0;
   display: block;
-  width: 80%;
+  @include mix.mqDesk('tablet-portrait') {
+    margin: f.em(10px) auto 0;
+  }
 }
