@@ -39,7 +39,7 @@
 
 #overlay,
 #logo-animation {
-  display: none;
+  display: block;
 }
 
 #overlay {
@@ -55,8 +55,26 @@
   display: block;
   width: 50%;
   height: 50%;
+  overflow: hidden;
   margin: 10dvh 25dvw;
   z-index: 15;
+}
+
+/*Logo Animation*/
+.a-right {
+  transform: translateX(-100%);
+}
+
+.m-left {
+  transform: translateX(100%);
+}
+
+.s-up {
+  transform: translateY(100%);
+}
+
+.s-down {
+  transform: translateY(-100%);
 }
 
 #portfolio-bg,
@@ -817,15 +835,14 @@ PORTFOLIO LAYOUT DESKTOP
 /********************
 PORTFOLIO NAV CONTROLS
 *********************/
+
 .proj-slider-nav {
   display: none;
-}
-.proj-slider-nav {
+  justify-content: space-between;
   height: 30px;
   width: 100%;
   padding: 0 f.em(2px);
   overflow: hidden;
-  @include mix.flexy($just: space-between);
   background: linear-gradient(69deg, $grey, $black, $black, $grey);
   transform: translateY(15px);
   // @include mix.debug($color: rgb(208, 222, 11));
