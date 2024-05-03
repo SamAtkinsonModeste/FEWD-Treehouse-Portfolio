@@ -916,15 +916,16 @@ main {
 
 .project-slider {
   width: 100%;
-  display: flex;
+  display: block;
 }
 
 .project-container,
 .logo-container {
-  width: 100%;
+  width: 318px;
   height: 18.3125em;
   margin-bottom: 2.5em;
   border-radius: 1.25em;
+  border: 1px solid #a47a1e;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -937,22 +938,22 @@ main {
 @media (min-width: 768px) {
   .project-container,
   .logo-container {
+    width: 725px;
     height: 40.625em;
-    margin-bottom: 3.125em;
   }
 }
 @media (min-width: 1024px) {
   .project-container,
   .logo-container {
+    width: 940px;
     height: 25em;
-    margin-bottom: 0;
   }
 }
 @media (min-width: 1400px) {
   .project-container,
   .logo-container {
+    width: 1000px;
     height: 31.25em;
-    margin-bottom: 0;
   }
 }
 @media (min-width: 1800px) {
@@ -1366,6 +1367,10 @@ PORTFOLIO LAYOUT DESKTOP
 /********************
 PORTFOLIO NAV CONTROLS
 *********************/
+.proj-slider-nav {
+  display: none;
+}
+
 .proj-slider-nav {
   height: 30px;
   width: 100%;

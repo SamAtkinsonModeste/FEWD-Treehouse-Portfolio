@@ -407,35 +407,37 @@ main {
 
 .project-slider {
   width: 100%;
-  display: flex;
-  // display: block;
+  // display: flex;
+  display: block;
   @extend %marg-cen;
   // @include mix.debug($color: rgb(235, 28, 28));
 }
 
 .project-container,
 .logo-container {
-  width: 100%;
+  width: 318px;
   height: f.em(293px);
   margin-bottom: f.em(40px);
   border-radius: f.em(20px);
+  @include mix.br-default($colu: $gold-grad-1);
   @include mix.flexy($dir: column, $just: space-evenly);
   @include mix.bg-proj-cont-grad;
   border: solid 3px $black;
   // @include mix.debug($color: rgb(28, 114, 235));
   @include mix.mqDesk('tablet-portrait') {
+    width: 725px;
     height: f.em(650px);
-    margin-bottom: f.em(50px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
+    width: 940px;
     height: f.em(400px);
-    margin-bottom: 0;
   }
 
   @include mix.mqDesk('lg-desktop-width') {
+    width: 1000px;
     height: f.em(500px);
-    margin-bottom: 0;
+
     // @include mix.debug($color: rgb(28, 114, 235));
   }
   @include mix.mqDesk('xx-lg-desktop-width') {
@@ -815,6 +817,9 @@ PORTFOLIO LAYOUT DESKTOP
 /********************
 PORTFOLIO NAV CONTROLS
 *********************/
+.proj-slider-nav {
+  display: none;
+}
 .proj-slider-nav {
   height: 30px;
   width: 100%;
