@@ -962,6 +962,10 @@ main {
   }
 }
 
+.project-container:hover .colour-img {
+  opacity: 1;
+}
+
 .logo-container {
   background: -webkit-linear-gradient(312deg, #545454, #2B2B2B 4%, #CEC6C6 21%, #CEC6C6 46%, #CEC6C6 79%, #2B2B2B 97%, #545454 100%);
   background: -moz-linear-gradient(312deg, #545454, #2B2B2B 4%, #CEC6C6 21%, #CEC6C6 46%, #CEC6C6 79%, #2B2B2B 97%, #545454 100%);
@@ -989,6 +993,7 @@ main {
 }
 
 .proj-img {
+  position: relative;
   width: 6.75em;
   margin-left: 5.625em;
 }
@@ -2090,6 +2095,8 @@ img {
     PORTFOLIO IMAGES
 ******************************/
 .colour-img {
+  position: absolute;
+  top: 0;
   opacity: 0;
 }
 

@@ -444,6 +444,10 @@ main {
   }
 }
 
+.project-container:hover .colour-img {
+  opacity: 1;
+}
+
 .logo-container {
   @include mix.bg-proj-logo-grad;
   // @include mix.debug($color: rgb(28, 114, 235));
@@ -465,6 +469,7 @@ main {
 }
 
 .proj-img {
+  position: relative;
   width: f.em(108px);
   margin-left: f.em(90px);
   // @include mix.debug($color: pink);
