@@ -42,16 +42,28 @@
   display: none;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  height: 100dvh;
+  width: 100dvw;
+  z-index: 10;
+}
+
+#logo-animation {
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 10dvh 25dvw;
+  z-index: 15;
+}
+
 #portfolio-bg,
 #contact-bg,
 #submit,
 .ball-tool-tip {
   display: block;
-}
-
-#portfolio-bg,
-#contact-bg {
-  margin-left: auto;
 }
 
 @include mix.mqDesk('tablet-portrait') {
@@ -117,6 +129,7 @@
   left: -100%;
   height: 100vh;
   width: 100%;
+  z-index: 1;
   @include mix.radialGradient;
 }
 
@@ -141,17 +154,17 @@
   font-size: f.em(50px);
 }
 
-.hamburger:hover .ham-top {
+.ham-top .active-ham {
   transform-origin: top left;
-  transform: rotate(90deg) scale(0.8) translateX(-5px);
+  transform: rotate(91deg) scale(0.6, 1) translateX(4px);
 }
 
-.hamburger:hover .ham-mid {
-  transform: rotate(30deg);
+.ham-mid .active-ham {
+  transform: rotate(40deg) translate(-2px, 0);
 }
 
-.hamburger:hover .ham-bottom {
-  transform: rotate(311deg) translate(11px, -9px);
+.ham-bottom .active-ham {
+  transform: rotate(317deg) translate(13px, -13px);
 }
 
 #nav-main {
@@ -181,6 +194,7 @@ main {
 }
 
 #inner-home,
+#inner-portfolio,
 #inner-about-me {
   display: grid;
 }
@@ -201,8 +215,7 @@ main {
 }
 
 #home-bg,
-#home-bottom,
-#portfolio-bg {
+#home-bottom {
   width: f.em(170px);
 }
 
@@ -264,6 +277,7 @@ main {
 
 #inner-portfolio {
   position: relative;
+  grid-template-columns: repeat(2, 1fr);
   // margin-bottom: f.em(32px);
   // @include mix.debug($color: rgb(233, 51, 10));
 }
@@ -271,24 +285,74 @@ main {
 .portfolio-header {
   position: relative;
   width: 100%;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 256px, 80px, 363px;
   // @include mix.debug($color: rgb(4, 184, 34));
+}
+
+#portfolio-bg {
+  grid-column: 2 / 3;
+  grid-row: 1 /2;
+  width: f.em(270px);
+  margin-left: auto;
+  @include mix.mqDesk('tablet-portrait') {
+    width: f.em(380px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(500px);
+    margin-left: auto;
+  }
+}
+
+.head-port {
+  grid-column: 1 / span 2;
+  grid-row: 2 /3;
+  // transform: translateY(-182px);
+  @include mix.mqDesk('tablet-portrait') {
+    // transform: translateY(-300px);
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    // transform: translateY(-400px);
+  }
 }
 
 .active-proj {
   border-bottom: f.em(2px) solid $gold;
 }
 
+.head-port,
+.slide-nav {
+  transform: translateY(-147px);
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translateY(f.em(-80px));
+  }
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    transform: translateY(f.em(-70px));
+  }
+}
+
 .slide-nav {
   @include mix.flexy($just: center);
-  margin-top: f.em(-15px);
-  margin-bottom: f.em(2px);
-  transform: translateY(f.em(-100px));
+  grid-column: 1 / span 2;
+  grid-row: 2 /3;
+  margin-top: f.em(20px);
+  // margin-bottom: f.em(2px);
+  // transform: translateY(f.em(-80px));
   @include mix.mqDesk('tablet-portrait') {
-    transform: translateY(f.em(-150px));
+    transform: translateY(f.em(-180px));
   }
 
   @include mix.mqDesk('tablet-landscape') {
-    transform: translateY(f.em(-250px));
+    // transform: translateY(f.em(-100px));
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    transform: translateY(-220px);
   }
 }
 
@@ -306,10 +370,19 @@ main {
   width: 100%;
   position: relative;
   height: fit-content;
-  transform: translateY(f.em(-90px));
+  grid-row: 3/4;
+  transform: translateY(f.em(-130px));
   // @include mix.debug($color: rgb(235, 221, 28));
-  @include mix.mqDesk('tablet-landscape') {
-    transform: translateY(f.em(-230px));
+  @include mix.mqDesk('tablet-portrait') {
+    transform: translateY(f.em(-200px));
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    // transform: translateY(f.em(-90px));
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    transform: translateY(f.em(-210px));
   }
 }
 
@@ -323,6 +396,11 @@ main {
 
   @include mix.mqDesk('tablet-landscape') {
     width: 940px;
+    // @include mix.debug($color: rgb(28, 235, 80));
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    width: 1000px;
     // @include mix.debug($color: rgb(28, 235, 80));
   }
 }
@@ -340,6 +418,7 @@ main {
   width: 100%;
   height: f.em(293px);
   margin-bottom: f.em(40px);
+  border-radius: f.em(20px);
   @include mix.flexy($dir: column, $just: space-evenly);
   @include mix.bg-proj-cont-grad;
   border: solid 3px $black;
@@ -352,6 +431,16 @@ main {
   @include mix.mqDesk('tablet-landscape') {
     height: f.em(400px);
     margin-bottom: 0;
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    height: f.em(500px);
+    margin-bottom: 0;
+    // @include mix.debug($color: rgb(28, 114, 235));
+  }
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    height: f.em(550px);
+    // @include mix.debug($color: rgb(28, 114, 235));
   }
 }
 
@@ -370,7 +459,7 @@ main {
     width: f.em(700px);
     height: f.em(500px);
   }
-  @include mix.mqDesk('tablet-portrait') {
+  @include mix.mqDesk('tablet-landscape') {
     display: none;
   }
 }
@@ -494,7 +583,7 @@ main {
 }
 
 .made-with {
-  height: 40px;
+  height: 45px;
   @include mix.flexy();
   padding: 0 f.em(2px);
   // @include mix.debug($color: rgb(68, 238, 244));
@@ -508,6 +597,12 @@ main {
     width: 100%;
     margin: 0 auto;
     margin-bottom: f.em(5px);
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    height: 100px;
+    margin-bottom: 0;
+    // @include mix.debug($color: rgb(28, 114, 235));
   }
 }
 
@@ -527,6 +622,11 @@ main {
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(500px);
     height: f.em(350px);
+    margin: f.em(8px) auto;
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(300px);
+    height: f.em(250px);
     margin: f.em(8px) auto;
   }
 }
@@ -555,6 +655,34 @@ main {
   }
 }
 
+.logo-info {
+  @include mix.mqDesk('tablet-landscape') {
+    display: flex;
+    height: f.em(150px);
+    margin: f.em(18px) auto 0;
+    padding: f.em(5px);
+    margin-bottom: 0;
+  }
+}
+
+.logo-head {
+  @include mix.mqDesk('tablet-landscape') {
+    width: 30%;
+    margin-left: f.em(5px);
+  }
+}
+.logo-text {
+  @include mix.mqDesk('tablet-landscape') {
+    width: 70%;
+    margin-right: f.em(15px);
+  }
+}
+.desktop {
+  display: none;
+  @include mix.mqDesk('tablet-landscape') {
+    display: inline;
+  }
+}
 /**************************
 PORTFOLIO LAYOUT DESKTOP
 ***************************/
@@ -656,6 +784,29 @@ PORTFOLIO LAYOUT DESKTOP
   }
 }
 
+@include mix.mqDesk('xx-lg-desktop-width') {
+  .proj-img-desk {
+    width: 255px;
+    // @include mix.debug($color: rgb(234, 3, 246));
+  }
+
+  .proj-img-desk img {
+    top: -54px;
+  }
+
+  .desk-proj-info {
+    height: 450px;
+    width: 580px;
+    border-radius: f.em(10px);
+  }
+
+  .project-info-desk {
+    width: 530px;
+    height: 198px;
+    border-radius: f.em(8px);
+  }
+}
+
 /********************
 PORTFOLIO NAV CONTROLS
 *********************/
@@ -670,6 +821,16 @@ PORTFOLIO NAV CONTROLS
   // @include mix.debug($color: rgb(208, 222, 11));
   @include mix.mqDesk('tablet-portrait') {
     height: 60px;
+    transform: translateY(-25px);
+    // @include mix.debug($color: rgb(208, 222, 11));
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    transform: translateY(15px);
+    // @include mix.debug($color: rgb(208, 222, 11));
+  }
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    transform: translateY(6px);
     // @include mix.debug($color: rgb(208, 222, 11));
   }
 }
@@ -682,6 +843,9 @@ PORTFOLIO NAV CONTROLS
   @include mix.mqDesk('tablet-portrait') {
     margin-right: f.em(40px);
   }
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: 220px;
+  }
 }
 
 #arrow-right,
@@ -691,6 +855,11 @@ PORTFOLIO NAV CONTROLS
   @include mix.mqDesk('tablet-portrait') {
     width: 60px;
     height: 30px;
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: 70px;
+    height: 40px;
   }
 }
 
@@ -704,6 +873,11 @@ PORTFOLIO NAV CONTROLS
   @include mix.mqDesk('tablet-portrait') {
     height: 40px;
   }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: 8px;
+    height: 50px;
+  }
 }
 
 .ul-navs {
@@ -713,6 +887,10 @@ PORTFOLIO NAV CONTROLS
   // @include mix.debug($color: rgb(222, 11, 36));
   @include mix.mqDesk('tablet-portrait') {
     margin-left: f.em(35px);
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    margin-left: f.em(105px);
   }
 }
 
@@ -746,6 +924,12 @@ PORTFOLIO NAV CONTROLS
   margin-top: 0;
   @include mix.mqDesk('tablet-portrait') {
     margin-top: f.em(5px);
+  }
+}
+
+.interactive {
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    margin-top: f.em(20px);
   }
 }
 
@@ -796,6 +980,19 @@ PORTFOLIO NAV CONTROLS
     width: f.em(270px);
     height: f.em(320px);
   }
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(200px);
+    height: f.em(280px);
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    width: f.em(300px);
+    height: f.em(380px);
+  }
+}
+
+.about-me {
+  transform: translate(15px, 14px);
 }
 
 #inner-about-me p {
@@ -804,24 +1001,7 @@ PORTFOLIO NAV CONTROLS
 
 .me-about-img {
   grid-column: 2/3;
-  @include mix.flexy();
-}
-
-.dev-list,
-.design-list {
-  @include mix.flexy($just: space-evenly, $align: center);
-  @include mix.mqDesk('tablet-portrait') {
-    width: 450px;
-    margin-left: auto;
-  }
-}
-
-.dev-web,
-.design-dev {
-  grid-column: 2;
-}
-
-@include mix.mqDesk('tablet-portrait') {
+  @include mix.flexy($just: flex-end);
 }
 
 .dev-list,
@@ -829,24 +1009,6 @@ PORTFOLIO NAV CONTROLS
 .skill-head-underline,
 .dev-web {
   grid-column: 1 / span 2;
-}
-
-.skill-head-underline {
-  @include mix.flexy($dir: column, $just: flex-end);
-}
-
-.skill-under {
-  height: f.em(2px);
-  width: 260px;
-  border-radius: 5px;
-  align-self: flex-end;
-  margin-left: auto;
-  @include mix.gold-bar();
-  @include mix.mqDesk('tablet-portrait') {
-    height: f.em(3px);
-    width: 300px;
-    transform: translateX(215px);
-  }
 }
 
 .dev-list li,
@@ -858,6 +1020,98 @@ PORTFOLIO NAV CONTROLS
     width: 70px;
     height: 70px;
   }
+  @include mix.mqDesk('tablet-landscape') {
+    width: 90px;
+    height: 90px;
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: 100px;
+    height: 100px;
+    margin: 0 f.em(25px);
+  }
+}
+
+.skill-head-underline,
+.dev-list,
+.design-list {
+  @include mix.mqDesk('tablet-portrait') {
+    grid-column: 2;
+  }
+}
+
+.dev-list,
+.design-list {
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(30px);
+  }
+}
+
+.dev-web-underline,
+.design-web-underline {
+  @include mix.mqDesk('tablet-portrait') {
+    grid-column: 1;
+  }
+}
+
+.skill-head-underline {
+  @include mix.mqDesk('tablet-portrait') {
+    grid-row: 5 / 6;
+  }
+}
+
+.dev-list,
+.dev-web-underline {
+  @include mix.mqDesk('tablet-portrait') {
+    grid-row: 6 / 7;
+  }
+}
+
+.design-list,
+.design-web-underline {
+  @include mix.mqDesk('tablet-portrait') {
+    grid-row: 7 / 8;
+  }
+}
+
+.skill-under {
+  height: f.em(2px);
+  width: 75px;
+  border-radius: 5px;
+  margin-right: f.em(20px);
+  @include mix.gold-bar();
+  transform: translateY(-5px);
+
+  @include mix.mqDesk('tablet-portrait') {
+    height: f.em(3px);
+    width: 200px;
+    margin-right: f.em(5px);
+    transform: translateY(-23px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    height: f.em(3px);
+    width: 230px;
+    transform: translateY(-25px);
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    height: f.em(3px);
+    width: 340px;
+    // transform: translateY(-25px);
+  }
+}
+
+.dev-web-underline {
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(15px);
+  }
+}
+
+.design-web-underline {
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(-5px);
+  }
 }
 
 .web-dev-underline,
@@ -866,14 +1120,22 @@ PORTFOLIO NAV CONTROLS
   @include mix.mqDesk('tablet-portrait') {
     display: block;
     width: f.em(250px);
-    height: f.em(3px);
+    height: f.em(2px);
+    margin-left: f.em(3px);
     @include mix.gold-bar();
-    transform: translate(-232px, -40px);
+    transform: translateY(-13px);
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: f.em(435px);
+    height: f.em(3px);
+    transform: translateY(-37px);
   }
 }
 
 .dev-list,
 .design-list {
+  @include mix.flexy($just: space-evenly, $align: center);
   height: f.em(46px);
   padding: f.em(6px) 0;
   border-radius: f.em(32px);
@@ -881,12 +1143,34 @@ PORTFOLIO NAV CONTROLS
   @include mix.mqDesk('tablet-portrait') {
     padding: f.em(40px) 0;
     border-radius: f.em(42px);
+    width: 450px;
+    margin-left: f.em(5px);
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    padding: f.em(40px) 0;
+    border-radius: f.em(42px);
+    width: 700px;
+  }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    padding: f.em(60px) 0;
+    border-radius: f.em(92px);
+    margin-top: f.em(50px);
+    width: 1250px;
   }
 }
 
-@include mix.mqDesk('tablet-portrait') {
+@include mix.mqDesk('tablet-landscape') {
   .dev-list {
-    transform: translateY(-101px);
+    @include mix.ul-bg(
+      $dir-pix: 275px at center right,
+      $col-1: $ul-rad-grad-1,
+      $col-2: $black
+    );
+
+    @include mix.mqDesk('tablet-portrait') {
+      @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
+    }
   }
 }
 .design-list {
@@ -895,10 +1179,12 @@ PORTFOLIO NAV CONTROLS
     $col-1: $ul-rad-grad-1,
     $col-2: $black
   );
+}
 
-  @include mix.mqDesk('tablet-portrait') {
-    transform: translateY(-101px);
-    @include mix.ul-bg($col-1: $ul-rad-grad-1, $col-2: $black);
+@include mix.mqDesk('lg-desktop-width') {
+  .dev-web-underline,
+  .design-web-underlinet {
+    grid-column: 1;
   }
 }
 
@@ -906,15 +1192,77 @@ PORTFOLIO NAV CONTROLS
     CONTACT ME            
 *******************************/
 #contact-me {
-  margin-top: f.em(15px);
+  // margin-top: f.em(15px);
+  @include mix.mqDesk('tablet-landscape') {
+    margin: 0;
+  }
+}
+
+#inner-contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mix.mqDesk('tablet-portrait') {
+    padding-bottom: f.em(50px);
+  }
+}
+
+.contact-h2,
+.need-website,
+#contact-me-form {
+  grid-column: 1 / span 2;
+}
+#contact-bg {
+  grid-column: 2;
+  margin-left: auto;
+}
+#contact-bg,
+.contact-h2,
+.need-website {
+  grid-row: 1 / 2;
+}
+
+.contact-h2 {
+  margin-top: f.em(30px);
+  margin-bottom: 0;
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(5px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    margin-top: f.em(50px);
+  }
+}
+
+.need-website {
+  margin-top: f.em(160px);
+  margin-bottom: 0;
+  @include mix.mqDesk('tablet-portrait') {
+    margin-top: f.em(140px);
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    margin-top: f.em(250px);
+  }
+}
+
+.need-website .form {
+  display: none;
+  @include mix.mqDesk('tablet-landscape') {
+    display: block;
+    margin-top: f.em(50px);
+  }
 }
 
 #contact-me-form {
   width: f.em(310px);
-  transform: translateY(f.em(-100px));
+  // transform: translateY(f.em(-100px));
   // @include mix.debug($color: rgb(98, 46, 220));
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(500px);
+    // @include mix.debug($color: rgb(98, 46, 220));
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    transform: translateY(-115px);
     // @include mix.debug($color: rgb(98, 46, 220));
   }
 }
@@ -926,8 +1274,13 @@ PORTFOLIO NAV CONTROLS
   height: f.em(50px);
   @include mix.mqDesk('tablet-portrait') {
     width: 100%;
-    margin: f.em(160px) auto;
-    transform: translateY(-300px);
+    margin: f.em(50px) auto;
+    // @include mix.debug($color: rgb(111, 247, 15));
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: 100%;
+    margin: f.em(140px) auto;
     // @include mix.debug($color: rgb(111, 247, 15));
   }
 }
@@ -981,8 +1334,10 @@ textarea:focus {
   height: f.em(60px);
   transform: translateY(-38px);
   // @include mix.debug($color: rgb(184, 181, 4));
+
   @include mix.mqDesk('tablet-portrait') {
-    transform: translate(87px, -134px);
+    height: f.em(30px);
+    transform: translate(87px, -104px);
   }
 }
 
@@ -1011,11 +1366,16 @@ textarea::-webkit-resizer {
   margin: 0 auto;
   @include mix.br-default($gold);
   border-radius: $br-rad;
-  transform: translate(-2px, -18px);
+  // transform: translate(-2px, -18px);
 
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(90px);
-    transform: translate(-14px, -350px);
+    // transform: translate(-14px, 50px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(90px);
+    // transform: translate(-14px, -250px);
   }
 }
 
@@ -1025,7 +1385,6 @@ textarea::-webkit-resizer {
 
 footer {
   grid-area: footer;
-  // height: 60px;
   background: $black;
 
   bottom: 0;
@@ -1048,7 +1407,6 @@ footer {
     width: 50px;
     height: 50px;
     margin: 0 f.em(40px);
-    transform: translateY(-300px);
   }
 }
 

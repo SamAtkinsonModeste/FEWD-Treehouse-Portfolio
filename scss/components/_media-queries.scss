@@ -52,16 +52,9 @@
 }
 
 #home-bg,
-#home-bottom,
-#portfolio-bg {
+#home-bottom {
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(270px);
-  }
-}
-
-@include mix.mqDesk('tablet-landscape') {
-  #portfolio-bg {
-    width: f.em(400px);
   }
 }
 

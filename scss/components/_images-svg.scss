@@ -117,6 +117,11 @@ img {
     width: f.em(65px);
     margin-bottom: f.em(8px);
   }
+
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: f.em(85px);
+    margin-bottom: f.em(10px);
+  }
 }
 
 .proj-8 .html-made,
@@ -146,7 +151,22 @@ img {
 
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(284px);
-    height: f.em(247px);
-    transform: translate(-49px, 16px);
+    height: f.em(200px);
+    transform: translate(-49px, 47px);
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    width: f.em(294px);
+    height: f.em(224px);
+    transform: translate(-11px, 24px);
+  }
+
+  @include mix.mqDesk('lg-desktop-width') {
+    width: f.em(320px);
+    height: f.em(248px);
+  }
+  @include mix.mqDesk('xx-lg-desktop-width') {
+    width: f.em(480px);
+    height: f.em(388px);
   }
 }
