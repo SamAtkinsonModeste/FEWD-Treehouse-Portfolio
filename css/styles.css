@@ -554,11 +554,15 @@ p {
 #logo-animation {
   position: relative;
   display: block;
-  width: 50%;
-  height: 50%;
+  width: 300px;
   overflow: hidden;
-  margin: 10dvh 25dvw;
+  margin: 150px auto;
   z-index: 15;
+  border: solid pink 1px;
+}
+
+#anim-logo {
+  border: solid red 1px;
 }
 
 /*Logo Animation*/
@@ -567,7 +571,7 @@ p {
 }
 
 .m-left {
-  transform: translateX(100%);
+  transform: translateX(-100%);
 }
 
 .s-up {
