@@ -148,7 +148,7 @@ const overlayDismiss = () => {
         yoyo: true
         // repeatDelay:
       },
-      1.5
+      2.5
     )
     .from(
       '.creative-text',
@@ -258,7 +258,7 @@ animaLogo
       opacity: 0,
       stagger: { each: 0.1, from: 'end' },
       ease: 'bouce.InOut',
-      duration: 2.5,
+      duration: 1,
       repeat: 1,
       yoyo: true,
       repeatDelay: 3
@@ -272,10 +272,10 @@ animaLogo
       opacity: 0,
       stagger: { each: 0.1, from: 'start' },
       ease: 'bouce.InOut',
-      duration: 2.5,
+      duration: 1,
       repeat: 1,
       yoyo: true,
-      repeatDelay: 3
+      repeatDelay: 2.5
     },
     0
   )
