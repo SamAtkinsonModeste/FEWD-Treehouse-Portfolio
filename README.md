@@ -63,6 +63,7 @@ For the coding process I followed my mockups and with Adobe XD able to gain some
 - [GSAP](https://gsap.com/) - Javascript Animation library
 - Illustrator
 - Photoshop
+- Adobe XD
 - Favicon [Favicon Generator](https://www.favicon-generator.org/) - The Favicon Generator App where I upload my created favicon
 
 ### What I Learned
