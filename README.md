@@ -53,7 +53,7 @@ As I wanted to create my own **SVG**s, I started experimenting with Illustrator.
 I moved on to creating mockups of mobile,tablet and desktop in Adobe XD.<br>
 For the coding process I followed my mockups and with Adobe XD able to gain some of the code for fonts and colours. 😀
 
-### Technoliges Used
+### Technologies Used
 
 - Semantic HTML5 markup
 - CSS Grid
