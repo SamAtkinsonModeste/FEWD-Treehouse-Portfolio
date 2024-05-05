@@ -2150,6 +2150,7 @@ img {
     transform: translate(48px, -164px);
   }
 }
+
 .git {
   margin-top: 0.625em;
 }
@@ -2178,6 +2179,7 @@ img {
     margin-top: 0.5em;
   }
 }
+
 @media (min-width: 768px) {
   .proj-3 .htm-made,
   .proj-3 .css-made,
@@ -2539,6 +2541,7 @@ textarea,
     margin-top: 0.625em;
   }
 }
+
 @media (min-width: 768px) {
   .logo-text {
     font-size: 1.25em;
@@ -2569,6 +2572,7 @@ textarea,
     font-size: 1.5625em;
   }
 }
+
 @media (min-width: 768px) {
   .proj-8 .info-head {
     font-size: 20px;
@@ -2587,6 +2591,7 @@ textarea,
     margin-left: 0.3125em;
   }
 }
+
 .balls:hover::before {
   font-size: 0.6875em;
 }

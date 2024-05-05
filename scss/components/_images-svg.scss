@@ -108,29 +108,16 @@ img {
     width: f.em(50px);
     transform: translate(48px, -164px);
   }
-  @include mix.mqDesk('tablet-landscape') {
-    // margin: 0;
-    // transform: translateY(30px);
-  }
 }
 
 .git {
   margin-top: f.em(10px);
   @include mix.mqDesk('tablet-portrait') {
-    // margin-top: f.em(40px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
     margin-top: 0;
     margin-bottom: f.em(8px);
-    // transform: translateY(16px);
-  }
-}
-
-@include mix.mqDesk('tablet-landscape') {
-  .git-browser-desk.p-8 .git,
-  .git-browser-desk.p-8 .browser {
-    // transform: translateY(-4px);
   }
 }
 
@@ -145,11 +132,6 @@ img {
     width: f.em(80px);
     margin-top: f.em(8px);
   }
-
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    // width: f.em(85px);
-    // margin-bottom: f.em(10px);
-  }
 }
 
 @include mix.mqDesk('tablet-portrait') {
@@ -158,7 +140,6 @@ img {
   .proj-4 .html-made,
   .proj-4 .sass-made {
     width: f.em(140px);
-    // margin: f.em(15px) f.em(-2px);
   }
 }
 

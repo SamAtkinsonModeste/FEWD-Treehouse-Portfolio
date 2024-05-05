@@ -276,10 +276,6 @@ textarea,
     @include mix.text($size: f.em(26px), $l-height: f.em(20px));
     margin-top: f.em(10px);
   }
-
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    // @include mix.text($size: f.em(34px), $l-height: f.em(38px));
-  }
 }
 
 .logo-text {
@@ -299,22 +295,11 @@ textarea,
   }
 }
 
-@include mix.mqDesk('xx-lg-desktop-width') {
-  .info-head.p3,
-  .info-head.p5 {
-    // @include mix.text($size: f.em(30px), $l-height: f.em(38px));
-  }
-}
-
 .proj-7 .info-head,
 .proj-8 .info-head {
   font-size: f.em(12px);
   @include mix.mqDesk('tablet-portrait') {
     font-size: f.em(25px);
-  }
-
-  @include mix.mqDesk('tablet-landscape') {
-    // font-size: f.em(20px);
   }
 }
 
@@ -324,25 +309,6 @@ textarea,
     margin-top: f.em(10px);
     margin-bottom: f.em(5px);
   }
-
-  @include mix.mqDesk('tablet-landscape') {
-    .proj-8 .info-head {
-      // font-size: (18px);
-    }
-  }
-}
-
-@include mix.mqDesk('tablet-portrait') {
-  .rtb-logo,
-  .s74-logo,
-  .way-logo {
-    // @include mix.text($size: f.em(34px), $l-height: f.em(40px));
-  }
-
-  .rtb-logo,
-  .s74-logo {
-    // @include mix.text($size: f.em(34px), $l-height: f.em(25px));
-  }
 }
 
 .created-with {
@@ -351,21 +317,6 @@ textarea,
   @include mix.mqDesk('tablet-portrait') {
     @include mix.text($size: f.em(22px), $l-height: f.em(20px));
     margin-left: f.em(5px);
-  }
-  @include mix.mqDesk('tablet-landscape') {
-    // @include mix.text($size: f.em(16px), $l-height: f.em(20px));
-    // margin-left: f.em(5px);
-  }
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    // @include mix.text($size: f.em(20px), $l-height: f.em(20px));
-    // margin-left: f.em(5px);
-  }
-}
-
-@include mix.mqDesk('tablet-landscape') {
-  .created-with.proj-7 {
-    // @include mix.text($size: f.em(12px), $l-height: f.em(18px));
-    // margin-left: f.em(5px);
   }
 }
 
