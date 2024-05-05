@@ -3,83 +3,72 @@
 //==========================================================================
 
 // FONTS
-$font-family--primary : 'boucherie-block',
-'cursive';
-$font-family--secondary : 'finalsix',
-'sans-serif';
+$font-family--primary: 'boucherie-block', 'cursive';
+$font-family--secondary: 'finalsix', 'sans-serif';
 $font-family--parag: 'futura-pt', 'sans-serif';
 
-
 // FONT WEIGHTS
-$font-weight--regular : 400;
-$font-weight--medium : 500;
-$font-weight--bold : 700;
-
-
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--bold: 700;
 
 //COLORS
-$black : #000000; //rad grad 3
-$grey : #2B2B2B;
-$emperor-bg-proj: #545454; //grad-for-project-container 
+$black: #000000; //rad grad 3
+$grey: #2b2b2b;
+$emperor-bg-proj: #545454; //grad-for-project-container
 $balls-nav: #3d4156;
 $ul-rad-grad-1: #1c1d26;
-$gold : #D4AF37;
-$silver-rust: #CEC6C6; //my white
+$gold: #d4af37;
+$silver-rust: #cec6c6; //my white
 $gold-grad-1: #a47a1e;
 $gold-grad-2: #d3a84c;
-$gold-grad-3 :#ffec94;
-$gold-grad-4 :#e6be69;
-$gold-grad-5 : #ffd87c;
-$gold-grad-6 : #c29c49;
-$gold-grad-7 : #b58f3e;
-$rad-grad-1 : #ab0909;
-$rad-grad-2 : #690808;
-$red : #ff0000; //text-shadow-60%
+$gold-grad-3: #ffec94;
+$gold-grad-4: #e6be69;
+$gold-grad-5: #ffd87c;
+$gold-grad-6: #c29c49;
+$gold-grad-7: #b58f3e;
+$rad-grad-1: #ab0909;
+$rad-grad-2: #690808;
+$red: #ff0000; //text-shadow-60%
 $rad-grad-orange-1: #f7661e;
 $rad-grad-orange-2: #903c12;
 $rad-grad-amber-1: #f7931e;
 $rad-grad-amber-2: #6a3f0e;
 
-
-
 //TEXT
-$base__font-size : 16px;
-$base__line : 24px;
-$letter-spacing : 1px;
+$base__font-size: 16px;
+$base__line: 24px;
+$letter-spacing: 1px;
 
 //ASSET PATHS
-$path-img : '../img';
-
-
+$path-img: '../img';
 
 //BORDER RADIUS
-$br-rad : 0.25em;
-$br-rad-lg : 0.750em;
-
-
+$br-rad: 0.25em;
+$br-rad-lg: 0.75em;
 
 //Breakpoints Width Variables
 $breakpoints: (
-    'xxx-s-mobile-width' : 320px,
-    'xx-s-mobile-width' : 360px,
-    'x-s-mobile-width' : 414px,
-    's-mobile-width' : 428px,
-    'tablet-portrait': 768px,
-    'tablet-landscape': 1024px,
-    'lg-desktop-width' : 1400px,
-    'xx-lg-desktop-width' : 1800px,
-    'xxx-lg-desktop-width': 2000px
+  'xxx-s-mobile-width': 320px,
+  'xx-s-mobile-width': 360px,
+  'x-s-mobile-width': 414px,
+  's-mobile-width': 428px,
+  'tablet-portrait': 768px,
+  'tablet-landscape': 1024px,
+  'desktop-width': 1300px,
+  'lg-desktop-width': 1400px,
+  'xx-lg-desktop-width': 1800px,
+  'xxx-lg-desktop-width': 2000px
 );
-
 
 //Breakheights Variables
 $breakheights: (
-    'xx-short-mobile-height': 568px,
-    'x-short-mobile-height' : 772px,
-    'short-mobile-height' : 780px,
-    'tall-mobile-height' : 800px,
-    'x-tall-mobile-height': 844px,
-    'xx-tall-mobile-height' : 880px,
-    'xxx-tall-mobile-height' : 915px,
-    'ex-tall-mobile-height' : 932px,
+  'xx-short-mobile-height': 568px,
+  'x-short-mobile-height': 772px,
+  'short-mobile-height': 780px,
+  'tall-mobile-height': 800px,
+  'x-tall-mobile-height': 844px,
+  'xx-tall-mobile-height': 880px,
+  'xxx-tall-mobile-height': 915px,
+  'ex-tall-mobile-height': 932px
 );

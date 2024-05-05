@@ -5,7 +5,7 @@
 .creative-text,
 .webDev-text,
 .head-port,
-.slide-nav,
+.top-slide-nav,
 .live-text,
 .logo-head,
 .about-me,
@@ -46,7 +46,7 @@ small {
 .creative-text,
 .webDev-text,
 .head-port,
-.slide-nav,
+.top-slide-nav,
 .logo-head,
 .about-me,
 .skill-head,
@@ -201,7 +201,7 @@ textarea,
   }
 }
 
-.slide-nav,
+.top-slide-nav,
 .live-text,
 .created-with {
   font-style: italic;
@@ -236,7 +236,7 @@ textarea,
   }
 
   @include mix.mqDesk('tablet-landscape') {
-    @include mix.text($size: f.em(35px), $l-height: f.em(45px));
+    @include mix.text($size: f.em(28px), $l-height: f.em(40px));
     margin: f.em(5px) auto;
   }
 }
@@ -288,7 +288,7 @@ textarea,
     text-align: center;
   }
   @include mix.mqDesk('tablet-landscape') {
-    @include mix.text($size: f.em(28px), $l-height: f.em(22px));
+    @include mix.text($size: f.em(22px), $l-height: f.em(20px));
     text-align: center;
   }
 }

@@ -4,6 +4,8 @@ const projects = document.querySelectorAll('.project')
 const mobileNav = document.querySelector('#mobile-nav')
 const mobileNavLi = mobileNav.querySelectorAll('li')
 const slideNav = document.querySelector('.proj-slider-nav')
+const portTopNav = document.querySelector('.top-slide-nav')
+const topPortLi = portTopNav.querySelectorAll('li')
 const ulStatic = document.querySelector('#static-ul')
 const ulInteract = document.querySelector('#interactive-ul')
 const ulLogos = document.querySelector('#logos-ul')
@@ -11,6 +13,7 @@ const indicatDots = slideNav.querySelectorAll('li')
 const hamburger = document.querySelector('.hamburger')
 const body = document.body
 const projViewBox = document.querySelector('.proj-viewport')
+const viewBoxWidth = getComputedStyle(projViewBox).width
 const nextBtn = document.querySelector('#arrow-right')
 const prevBtn = document.querySelector('#arrow-left')
 const staticUl = document.querySelector('#static-ul')
@@ -19,6 +22,8 @@ const logosUl = document.querySelector('#logos-ul')
 const projWidth = getComputedStyle(projects[0]).width
 const moveAmount = projWidth
 console.log(projWidth)
+console.log(viewBoxWidth)
+console.log(topPortLi)
 
 let projectIndex = 0
 
@@ -36,7 +41,7 @@ const setupsDismis = () => {
   projectSlider.style.display = 'flex'
   slideNav.style.display = 'flex'
   projects.forEach(project => {
-    project.style.margin = 0
+    project.style.margin = '0'
 
     // gsap.to(project, { scale: 0.5 })
 
@@ -68,7 +73,7 @@ const setupsDismis = () => {
     .from(
       '.hori',
       {
-        x: 400,
+        x: -400,
         opacity: 0,
         stagger: { each: 0.1, from: 'start' },
         ease: 'bouce.InOut',
@@ -96,7 +101,7 @@ const setupsDismis = () => {
     .from(
       '.vert',
       {
-        y: 400,
+        y: -400,
         opacity: 0,
         stagger: { each: 0.1, from: 'start' },
         ease: 'bouce.InOut',
@@ -206,9 +211,9 @@ const setupsDismis = () => {
       2.5
     )
     .from(
-      '.slide-nav',
+      '.top-slide-nav',
       {
-        y: 400,
+        y: -400,
         opacity: 0,
         stagger: { each: 0.1, from: 'start' },
         ease: 'bouce.InOut',
@@ -305,6 +310,10 @@ function showProjs (index) {
 
   projects[projectIndex].classList.add('active-proj')
 
+  if (projects[projectIndex].classList.contains('active-proj')) {
+    projects[projectIndex].style.display.alignSelf = 'center'
+  }
+
   indicatDots.forEach(list => list.classList.remove('active-indiBall'))
 
   indicatDots[projectIndex].classList.add('active-indiBall')
@@ -318,13 +327,21 @@ function ulNextBtn () {
     ulStatic.classList.remove('current-ul')
     ulInteract.style.display = 'flex'
     ulInteract.classList.add('current-ul')
-    gsap.to(ulInteract, { y: -41 })
+    gsap.to(ulInteract, { y: -40 })
+    topPortLi.forEach(portLi => {
+      portLi.classList.remove('active-proj-sec')
+    })
+    topPortLi[1].classList.add('active-proj-sec')
   } else if (projectIndex === 7) {
     console.log(ulLogos)
     ulInteract.classList.remove('current-ul')
     gsap.to(ulInteract, { y: 100 })
     ulLogos.classList.add('current-ul')
-    gsap.to(ulLogos, { y: -97 })
+    gsap.to(ulLogos, { y: -96 })
+    topPortLi.forEach(portLi => {
+      portLi.classList.remove('active-proj-sec')
+    })
+    topPortLi[2].classList.add('active-proj-sec')
   }
 }
 
@@ -335,12 +352,20 @@ function ulPrevBtn () {
     gsap.to(ulStatic, { xPercent: 0 })
     ulInteract.classList.remove('current-ul')
     gsap.to(ulInteract, { y: 100 })
-  } else if (projectIndex === 5) {
+    topPortLi.forEach(portLi => {
+      portLi.classList.remove('active-proj-sec')
+    })
+    topPortLi[0].classList.add('active-proj-sec')
+  } else if (projectIndex === 6) {
     console.log(ulInteract)
     ulLogos.classList.remove('current-ul')
     gsap.to(ulLogos, { y: 100 })
     ulInteract.classList.add('current-ul')
     gsap.to(ulInteract, { y: -43 })
+    topPortLi.forEach(portLi => {
+      portLi.classList.remove('active-proj-sec')
+    })
+    topPortLi[1].classList.add('active-proj-sec')
   }
 }
 
@@ -355,6 +380,7 @@ function goRight () {
     // console.log(prevBtn);
     prevBtn.style.visibility = 'visible'
   }
+
   gsap.to(projects, { x: `-=${moveAmount}`, ease: 'power4.out', duration: 1.1 })
   gsap.to('.active-proj', { scale: 1, delay: 0.8, duration: 0.8 })
   console.log(moveAmount)
