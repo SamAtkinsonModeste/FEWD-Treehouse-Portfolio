@@ -28,7 +28,8 @@
 }
 
 #contact-me-form,
-.proj-viewport {
+.proj-viewport,
+.project-slider {
   @extend %marg-cen;
 }
 
@@ -39,7 +40,7 @@
 
 #overlay,
 #logo-animation {
-  display: block;
+  display: none;
 }
 
 #overlay {
@@ -56,7 +57,6 @@
   width: 50%;
   overflow: hidden;
   margin: 150px auto;
-  // margin: 10dvh 25dvw;
   z-index: 15;
 }
 
@@ -134,10 +134,12 @@
   @include mix.radialGradient;
 }
 
+.active-ham #mobile-nav {
+  transform: translateX(100%);
+}
+
 .mobile-nav-ul {
-  transform: translateY(18vh);
-  max-width: f.em(350px);
-  // @include mix.debug($color: $gold-grad-5);
+  margin-top: f.em(50px);
 }
 
 .mobile-nav-ul li {
@@ -152,19 +154,19 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
-  font-size: f.em(50px);
+  font-size: f.em(30px);
 }
 
-.ham-top .active-ham {
+.active-ham .ham-top {
   transform-origin: top left;
   transform: rotate(91deg) scale(0.6, 1) translateX(4px);
 }
 
-.ham-mid .active-ham {
+.active-ham .ham-mid {
   transform: rotate(40deg) translate(-2px, 0);
 }
 
-.ham-bottom .active-ham {
+.active-ham .ham-bottom {
   transform: rotate(317deg) translate(13px, -13px);
 }
 
@@ -174,6 +176,8 @@
 
   @include mix.mqDesk('tablet-portrait') {
     display: block;
+    max-width: 1800px;
+    margin: 0 auto;
   }
 }
 
@@ -190,8 +194,16 @@
 ******************/
 main {
   grid-area: main;
-  margin-top: f.em(130px);
+  max-width: 1800px;
+  margin: f.em(130px) auto 0;
   // @include mix.debug($color: blue);
+}
+
+#inner-home,
+#inner-portfolio,
+#inner-about-me,
+#inner-contact-me {
+  padding-top: 55px;
 }
 
 #inner-home,
@@ -207,7 +219,6 @@ main {
 #inner-home {
   gap: f.em(20px);
   grid-template-columns: repeat(2, 1fr);
-  // grid-template-rows: 1fr 120px 1fr;
   margin-bottom: f.em(8px);
 }
 
@@ -273,87 +284,73 @@ main {
 **********************************************/
 #portfolio {
   padding: 0;
-  margin-top: f.em(55px);
 }
 
 #inner-portfolio {
   position: relative;
-  grid-template-columns: repeat(2, 1fr);
-  // margin-bottom: f.em(32px);
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: 'header' 'projects';
   // @include mix.debug($color: rgb(233, 51, 10));
 }
 
 .portfolio-header {
+  grid-area: header;
   position: relative;
   width: 100%;
-  grid-row-start: 1;
-  grid-row-end: 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 256px, 80px, 363px;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 50px;
+  grid-template-areas: 'topPort' 'navPort';
   // @include mix.debug($color: rgb(4, 184, 34));
+
+  //MEDIA QUERY
+  @include mix.mqDesk('tablet-portrait') {
+    grid-column: span 2;
+    grid-template-rows: 220px 70px;
+  }
+
+  @include mix.mqDesk('tablet-portrait') {
+    grid-column: span 2;
+    grid-template-rows: 120px 60px;
+  }
 }
 
 #portfolio-bg {
-  grid-column: 2 / 3;
-  grid-row: 1 /2;
-  width: f.em(270px);
+  grid-area: topPort;
+  width: f.em(170px);
   margin-left: auto;
+  margin-top: 0;
+
+  //MEDIA QUERY
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(380px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
-    width: f.em(500px);
+    width: f.em(230px);
     margin-left: auto;
   }
 }
 
 .head-port {
-  grid-column: 1 / span 2;
-  grid-row: 2 /3;
-  // transform: translateY(-182px);
+  grid-area: topPort;
+  margin-top: f.em(30px);
+
+  //MEDIA QUERY
   @include mix.mqDesk('tablet-portrait') {
-    // transform: translateY(-300px);
+    margin-top: f.em(10px);
   }
-
-  @include mix.mqDesk('lg-desktop-width') {
-    // transform: translateY(-400px);
-  }
-}
-
-.active-proj {
-  border-bottom: f.em(2px) solid $gold;
-}
-
-.head-port,
-.slide-nav {
-  transform: translateY(-147px);
-  @include mix.mqDesk('tablet-portrait') {
-    transform: translateY(f.em(-80px));
-  }
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    transform: translateY(f.em(-70px));
-  }
-}
-
-.slide-nav {
-  @include mix.flexy($just: center);
-  grid-column: 1 / span 2;
-  grid-row: 2 /3;
-  margin-top: f.em(20px);
-  // margin-bottom: f.em(2px);
-  // transform: translateY(f.em(-80px));
-  @include mix.mqDesk('tablet-portrait') {
-    transform: translateY(f.em(-180px));
-  }
-
   @include mix.mqDesk('tablet-landscape') {
-    // transform: translateY(f.em(-100px));
+    margin-top: 0;
   }
+}
 
-  @include mix.mqDesk('lg-desktop-width') {
-    transform: translateY(-220px);
+.slide-nav {
+  grid-area: navPort;
+  margin-bottom: f.em(10px);
+  @include mix.flexy($just: center);
+  @include mix.mqDesk('tablet-portrait') {
   }
 }
 
@@ -367,82 +364,71 @@ main {
   }
 }
 
+.active-proj-sec {
+  border-bottom: f.em(2px) solid $gold;
+}
+
 .projects-container {
+  grid-area: projects;
   width: 100%;
   position: relative;
   height: fit-content;
   grid-row: 3/4;
-  transform: translateY(f.em(-130px));
-  // @include mix.debug($color: rgb(235, 221, 28));
+  margin: auto;
+
+  @include mix.debug($color: rgb(235, 221, 28));
+
   @include mix.mqDesk('tablet-portrait') {
-    transform: translateY(f.em(-200px));
-  }
-
-  @include mix.mqDesk('lg-desktop-width') {
-    // transform: translateY(f.em(-90px));
-  }
-
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    transform: translateY(f.em(-210px));
+    grid-column: 1 / span 2;
   }
 }
 
 .proj-viewport {
   width: 318px;
+  padding: 10px;
   overflow: hidden;
-  // @include mix.debug($color: rgb(28, 235, 80));
+  margin: auto;
+  @include mix.debug($color: rgb(28, 235, 80));
+
   @include mix.mqDesk('tablet-portrait') {
-    width: 725px;
+    width: 740px;
   }
 
   @include mix.mqDesk('tablet-landscape') {
     width: 940px;
     // @include mix.debug($color: rgb(28, 235, 80));
   }
-
-  @include mix.mqDesk('lg-desktop-width') {
-    width: 1000px;
-    // @include mix.debug($color: rgb(28, 235, 80));
-  }
 }
 
+//reset this to display none for js
 .project-slider {
+  display: flex;
   width: 100%;
-  // display: flex;
-  display: block;
-  @extend %marg-cen;
-  // @include mix.debug($color: rgb(235, 28, 28));
+  justify-content: space-between;
+  @include mix.debug($color: rgb(235, 28, 28));
 }
 
-.project-container,
-.logo-container {
-  width: 318px;
-  height: f.em(293px);
+.project {
+  width: 292px;
   margin-bottom: f.em(40px);
   border-radius: f.em(20px);
-  @include mix.br-default($colu: $gold-grad-1);
+  @include mix.br-default($pix: 1px, $styl: solid, $colu: $gold-grad-1);
   @include mix.flexy($dir: column, $just: space-evenly);
   @include mix.bg-proj-cont-grad;
   border: solid 3px $black;
   // @include mix.debug($color: rgb(28, 114, 235));
+
   @include mix.mqDesk('tablet-portrait') {
-    width: 725px;
-    height: f.em(650px);
+    width: 713px;
   }
 
   @include mix.mqDesk('tablet-landscape') {
-    width: 940px;
-    height: f.em(400px);
+    width: 912px;
+    // @include mix.debug($color: rgb(28, 114, 235));
   }
 
   @include mix.mqDesk('lg-desktop-width') {
-    width: 1000px;
     height: f.em(500px);
-
-    // @include mix.debug($color: rgb(28, 114, 235));
-  }
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    height: f.em(550px);
     // @include mix.debug($color: rgb(28, 114, 235));
   }
 }
@@ -453,18 +439,17 @@ main {
 
 .logo-container {
   @include mix.bg-proj-logo-grad;
-  // @include mix.debug($color: rgb(28, 114, 235));
+  // @include mix.debug($color: rgb(94, 235, 28));
 }
 
 .project-img-links {
-  width: f.em(310px);
-  height: f.em(230px);
+  width: 292px;
   @include mix.flexy($just: space-between);
   margin: 0 auto;
   // @include mix.debug($color: rgb(207, 28, 235));
+
   @include mix.mqDesk('tablet-portrait') {
-    width: f.em(700px);
-    height: f.em(500px);
+    width: 675px;
   }
   @include mix.mqDesk('tablet-landscape') {
     display: none;
@@ -474,12 +459,12 @@ main {
 .proj-img {
   position: relative;
   width: f.em(108px);
-  margin-left: f.em(90px);
+  margin-left: f.em(95px);
   // @include mix.debug($color: pink);
 
   @include mix.mqDesk('tablet-portrait') {
-    width: f.em(240px);
-    margin-left: f.em(120px);
+    width: f.em(180px);
+    margin-left: f.em(220px);
   }
 }
 
@@ -488,50 +473,27 @@ main {
   margin-left: f.em(110px);
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(150px);
-    margin-left: f.em(220px);
+    margin-left: f.em(235px);
   }
 }
 
-.proj-4 .taller-proj {
+.proj-4 .taller-proj,
+.proj-7 .taller-proj {
   width: f.em(63px);
   @include mix.mqDesk('tablet-portrait') {
-    width: f.em(140px);
-    margin-left: f.em(220px);
+    width: f.em(135px);
+    margin-left: f.em(242px);
   }
 }
 
-.proj-7 .taller-proj {
-  width: f.em(78px);
-  @include mix.mqDesk('tablet-portrait') {
-    width: f.em(170px);
-    margin-left: f.em(150px);
-  }
-}
-
-.square-5 {
-  width: f.em(208px);
-  margin-left: f.em(30px);
-  @include mix.mqDesk('tablet-portrait') {
-    width: f.em(450px);
-    margin-left: f.em(20px);
-  }
-}
-
-.square-6 {
-  width: f.em(220px);
-  margin-left: f.em(18px);
-  @include mix.mqDesk('tablet-portrait') {
-    width: f.em(450px);
-    margin-left: f.em(20px);
-  }
-}
-
+.square-5,
+.square-6,
 .square-8 {
-  width: f.em(207px);
-  margin-left: f.em(20px);
+  width: f.em(200px);
+  margin-left: f.em(25px);
   @include mix.mqDesk('tablet-portrait') {
-    width: f.em(450px);
-    margin-left: f.em(20px);
+    width: f.em(300px);
+    margin-left: f.em(170px);
   }
 }
 
@@ -544,18 +506,24 @@ main {
   @extend %marg-cen;
 }
 
-.proj-nav {
+.proj-nav,
+.square-aside {
   width: f.em(56px);
   height: f.em(150px);
   padding: f.em(2px);
-  margin-right: f.em(10px);
+  margin-right: f.em(2px);
   margin-top: f.em(5px);
   // @include mix.debug($color: rgb(183, 235, 28));
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(150px);
-    height: f.em(450px);
-    margin-right: f.em(30px);
+    height: f.em(300px);
+    margin-top: 0;
+    margin-right: f.em(5px);
     // @include mix.debug($color: rgb(183, 235, 28));
+  }
+
+  .proj-7 .project-img-links .proj-nav {
+    height: f.em(130px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
@@ -563,16 +531,77 @@ main {
   }
 }
 
-.project-info,
 .logo-info {
+  height: 125px;
+  @include mix.mqDesk('tablet-portrait') {
+    height: 115px;
+  }
+}
+
+.project-info {
   height: 69px;
-  width: 100%;
+  width: 292px;
+  align-self: center;
+  transform: translateY(1px);
+  border-top-right-radius: f.em(5px);
+  border-top-left-radius: f.em(5px);
+  border-bottom-left-radius: f.em(2px);
+  border-bottom-right-radius: f.em(2px);
+
   @include mix.bg-proj-info;
   @include mix.box-shdo($in: inset, $blur: 7px, $sphd: 0, $colour: $red);
   // @include mix.debug($color: rgb(235, 59, 28));
 
   @include mix.mqDesk('tablet-portrait') {
     height: 115px;
+    width: 713px;
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    height: 120px;
+    width: 912px;
+    @include mix.flexy($just: space-between);
+  }
+}
+
+.logo-info {
+  height: 86px;
+  width: 292px;
+  align-self: center;
+  transform: translateY(1px);
+  border-top-right-radius: f.em(5px);
+  border-top-left-radius: f.em(5px);
+  border-bottom-left-radius: f.em(2px);
+  border-bottom-right-radius: f.em(2px);
+
+  @include mix.bg-proj-info;
+  @include mix.box-shdo($in: inset, $blur: 7px, $sphd: 0, $colour: $red);
+  // @include mix.debug($color: rgb(235, 59, 28));
+
+  @include mix.mqDesk('tablet-portrait') {
+    height: 115px;
+    width: 713px;
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    height: 120px;
+    width: 912px;
+    @include mix.flexy($just: space-between);
+  }
+}
+
+//media query for logos wides for now in flex containers
+@include mix.mqDesk('tablet-landscape') {
+  .logo-head {
+    width: 30%;
+    padding-left: f.em(2px);
+  }
+}
+
+@include mix.mqDesk('tablet-landscape') {
+  .logo-text {
+    width: 70%;
+    padding-right: f.em(2px);
   }
 }
 
@@ -582,11 +611,11 @@ main {
   }
 }
 
-.logo-info {
-  height: 125px;
+.logo-way .logo-info {
+  height: f.em(90px);
+
   @include mix.mqDesk('tablet-portrait') {
-    height: 215px;
-    transform: translateY(70px);
+    height: f.em(115px);
   }
 }
 
@@ -596,21 +625,9 @@ main {
   padding: 0 f.em(2px);
   // @include mix.debug($color: rgb(68, 238, 244));
   @include mix.mqDesk('tablet-portrait') {
-    height: 60px;
-    width: 80%;
+    height: 50px;
     margin: 0 auto;
-    margin-bottom: f.em(5px);
-  }
-  @include mix.mqDesk('tablet-landscape') {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: f.em(5px);
-  }
-
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    height: 100px;
-    margin-bottom: 0;
-    // @include mix.debug($color: rgb(28, 114, 235));
+    margin-bottom: f.em(15px);
   }
 }
 
@@ -624,73 +641,26 @@ main {
 }
 
 .logo-img {
-  width: 308px;
-  height: 268px;
+  width: 292px;
+
   // @include mix.debug($color: rgb(100, 68, 244));
   @include mix.mqDesk('tablet-portrait') {
-    width: f.em(500px);
-    height: f.em(350px);
-    margin: f.em(8px) auto;
+    width: f.em(300px);
+    margin: f.em(26px) auto;
   }
   @include mix.mqDesk('tablet-landscape') {
-    width: f.em(300px);
-    height: f.em(250px);
-    margin: f.em(8px) auto;
-  }
-}
-
-.logo-way .logo-info {
-  margin-top: f.em(35px);
-  height: f.em(90px);
-
-  @include mix.mqDesk('tablet-portrait') {
-    height: f.em(215px);
-    margin-top: f.em(50px);
-    transform: translateY(51px);
+    width: f.em(400px);
   }
 }
 
 .logo-way .logo-img {
-  height: 60px;
   width: 223px;
-  margin: 32px auto;
-  margin-bottom: 132px;
-  @include mix.mqDesk('tablet-portrait') {
-    height: f.em(300px);
-    width: 350px;
-    margin: f.em(18px) auto 0;
-    margin-bottom: 0;
+  margin: f.em(10px) auto;
+  @include mix.mqDesk('tablet-landscape') {
+    width: 360px;
   }
 }
 
-.logo-info {
-  @include mix.mqDesk('tablet-landscape') {
-    display: flex;
-    height: f.em(150px);
-    margin: f.em(18px) auto 0;
-    padding: f.em(5px);
-    margin-bottom: 0;
-  }
-}
-
-.logo-head {
-  @include mix.mqDesk('tablet-landscape') {
-    width: 30%;
-    margin-left: f.em(5px);
-  }
-}
-.logo-text {
-  @include mix.mqDesk('tablet-landscape') {
-    width: 70%;
-    margin-right: f.em(15px);
-  }
-}
-.desktop {
-  display: none;
-  @include mix.mqDesk('tablet-landscape') {
-    display: inline;
-  }
-}
 /**************************
 PORTFOLIO LAYOUT DESKTOP
 ***************************/
@@ -698,9 +668,8 @@ PORTFOLIO LAYOUT DESKTOP
   display: none;
   @include mix.mqDesk('tablet-landscape') {
     @include mix.flexy($disp: flex, $dir: row-reverse, $just: space-around);
-    width: 920px;
+    width: 880px;
     margin: 0 auto;
-    height: 405px;
     padding: f.em(5px);
     // @include mix.debug($color: rgb(251, 243, 88));
   }
@@ -709,50 +678,19 @@ PORTFOLIO LAYOUT DESKTOP
 @include mix.mqDesk('tablet-landscape') {
   .proj-img-desk {
     position: relative;
-    width: 200px;
+    width: 220px;
+    margin-left: 0;
     // @include mix.debug($color: rgb(234, 3, 246));
   }
 
-  .proj-img-desk img {
-    position: absolute;
-    top: -14px;
-  }
+  @include mix.mqDesk('tablet-landscape') {
+    .proj-img-desk.square-desk {
+      position: relative;
+      width: 300px;
+      margin-top: f.em(10px);
 
-  .proj-img-desk.taller-proj {
-    width: 124px;
-  }
-
-  .proj-img-desk.taller-proj-4 {
-    width: 110px;
-  }
-
-  .proj-img-desk.taller-proj img,
-  .proj-img-desk.taller-proj-4 img {
-    top: -2px;
-  }
-
-  .proj-img-desk.square-5,
-  .proj-img-desk.square-6,
-  .proj-img-desk.square-8 {
-    width: 350px;
-  }
-
-  .proj-img-desk.square-5 img,
-  .proj-img-desk.square-6 img {
-    top: 0;
-  }
-
-  .proj-img-desk.square-6 img,
-  .proj-img-desk.square-8 img {
-    top: 22px;
-  }
-
-  .proj-img-desk.taller-proj-7 {
-    width: 133px;
-  }
-
-  .proj-img-desk.taller-proj-7 img {
-    top: -1px;
+      // @include mix.debug($color: rgb(234, 3, 246));
+    }
   }
 
   .desk-proj-info {
@@ -786,61 +724,43 @@ PORTFOLIO LAYOUT DESKTOP
   }
 
   .git-browser-desk {
-    @include mix.flexy($just: space-between);
+    @include mix.flexy($just: space-around, $align: center);
     width: 80%;
     margin: 0 auto;
+    // @include mix.debug($color: rgb(16, 236, 244));
   }
 }
 
-@include mix.mqDesk('xx-lg-desktop-width') {
-  .proj-img-desk {
-    width: 255px;
-    // @include mix.debug($color: rgb(234, 3, 246));
+@include mix.mqDesk('lg-desktop-width') {
+  .proj-img-desk.taller-desk-proj {
+    width: 130px;
   }
+}
 
-  .proj-img-desk img {
-    top: -54px;
-  }
-
-  .desk-proj-info {
-    height: 450px;
-    width: 580px;
-    border-radius: f.em(10px);
-  }
-
-  .project-info-desk {
-    width: 530px;
-    height: 198px;
-    border-radius: f.em(8px);
+@include mix.mqDesk('lg-desktop-width') {
+  .logo-info.logo-s74-info {
+    margin-top: f.em(100px);
   }
 }
 
 /********************
 PORTFOLIO NAV CONTROLS
 *********************/
-
+//reset this to display none for js
 .proj-slider-nav {
-  display: none;
+  grid-area: galleryNav;
+  display: flex;
   justify-content: space-between;
   height: 30px;
   width: 100%;
   padding: 0 f.em(2px);
   overflow: hidden;
   background: linear-gradient(69deg, $grey, $black, $black, $grey);
-  transform: translateY(15px);
-  // @include mix.debug($color: rgb(208, 222, 11));
-  @include mix.mqDesk('tablet-portrait') {
-    height: 60px;
-    transform: translateY(-25px);
-    // @include mix.debug($color: rgb(208, 222, 11));
-  }
+  @include mix.debug($color: rgb(71, 6, 81));
 
-  @include mix.mqDesk('tablet-landscape') {
-    transform: translateY(15px);
-    // @include mix.debug($color: rgb(208, 222, 11));
-  }
-  @include mix.mqDesk('xx-lg-desktop-width') {
-    transform: translateY(6px);
+  @include mix.mqDesk('tablet-portrait') {
+    // height: 60px;
+    // transform: translateY(-13px);
     // @include mix.debug($color: rgb(208, 222, 11));
   }
 }
@@ -919,22 +839,16 @@ PORTFOLIO NAV CONTROLS
 
 .static,
 .interactive,
-.logos {
-  margin: f.em(5px) 0;
+.logos,
+.current-ul {
   height: f.em(30px);
   @include mix.flexy();
   // @include mix.debug($color: rgb(180, 222, 11));
-  @include mix.mqDesk('tablet-portrait') {
-    margin: f.em(10px) f.em(5px);
-    margin-top: f.em(5px);
-  }
 }
 
-.current-ul-port {
-  margin-top: 0;
-  @include mix.mqDesk('tablet-portrait') {
-    margin-top: f.em(5px);
-  }
+.interactive,
+.logos {
+  margin: f.em(15px) 0;
 }
 
 .interactive {
@@ -948,13 +862,8 @@ PORTFOLIO NAV CONTROLS
   width: 20px;
   height: 20px;
   padding: f.em(2px);
-  margin: f.em(5px) f.em(6px);
+  margin: f.em(3px) f.em(6px);
   border-radius: 100%;
-  @include mix.mqDesk('tablet-portrait') {
-    width: 30px;
-    height: 30px;
-    margin: f.em(10px) f.em(6px);
-  }
 }
 
 .sta {
@@ -1108,7 +1017,6 @@ PORTFOLIO NAV CONTROLS
   @include mix.mqDesk('xx-lg-desktop-width') {
     height: f.em(3px);
     width: 340px;
-    // transform: translateY(-25px);
   }
 }
 
@@ -1265,7 +1173,6 @@ PORTFOLIO NAV CONTROLS
 
 #contact-me-form {
   width: f.em(310px);
-  // transform: translateY(f.em(-100px));
   // @include mix.debug($color: rgb(98, 46, 220));
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(500px);
@@ -1299,7 +1206,6 @@ label {
   border-bottom: f.em(2px) solid $gold;
   height: f.em(25px);
   @include mix.mqDesk('tablet-portrait') {
-    // height: fit-content;
     padding-bottom: f.em(30px);
   }
 }
@@ -1315,7 +1221,6 @@ textarea {
   // @include mix.debug($color: rgb(130, 184, 4));
   @include mix.mqDesk('tablet-portrait') {
     margin-left: f.em(10px);
-    // margin-bottom: f.em(5px);
   }
 }
 
@@ -1373,19 +1278,16 @@ textarea::-webkit-resizer {
 #submit {
   background: $black;
   width: f.em(80px);
-  margin: 0 auto;
+  margin: 0 auto f.em(30px);
   @include mix.br-default($gold);
   border-radius: $br-rad;
-  // transform: translate(-2px, -18px);
 
   @include mix.mqDesk('tablet-portrait') {
     width: f.em(90px);
-    // transform: translate(-14px, 50px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
     width: f.em(90px);
-    // transform: translate(-14px, -250px);
   }
 }
 
@@ -1400,7 +1302,6 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 5;
-
   // @include mix.debug($color: rgb(184, 4, 172));
 }
 

@@ -34,10 +34,6 @@
 
 /*********HOME************/
 .role-bottom-bg {
-  @include mix.mqMobile('xxx-s-mobile-width', 'xx-short-mobile-height') {
-    margin-top: f.em(90px);
-  }
-
   @include mix.mqDesk('tablet-portrait') {
     margin-top: f.em(280px);
   }

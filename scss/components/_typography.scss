@@ -172,7 +172,6 @@ textarea,
 *******************/
 
 .head-port {
-  margin: 0;
   @include mix.text($size: f.em(25px));
 
   @include mix.mqDesk('tablet-portrait') {
@@ -214,30 +213,31 @@ textarea,
   transform: translate(0, -155px);
 
   //MEDIA QUERIES
-  @include mix.mqMobile(
-    $break-w: 'xxx-s-mobile-width',
-    $break-h: 'x-short-mobile-height'
-  ) {
-    transform: translate(1px, -155px);
-  }
-
-  @include mix.mqMobile(
-    $break-w: 's-mobile-width',
-    $break-h: 'ex-tall-mobile-height'
-  ) {
-    transform: translate(-2px, -245px);
-    font-size: f.em(11px);
-  }
 
   @include mix.mqDesk('tablet-portrait') {
-    transform: translate(11px, -162px);
-    font-size: f.em(25px);
+    transform: translate(29px, -162px);
+    font-size: f.em(18px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
     margin: 0;
     transform: none;
     text-align: center;
+  }
+}
+
+.logo-head {
+  @include mix.text($size: f.em(18px), $l-height: f.em(8px));
+  margin: f.em(20px) auto;
+
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(25px), $l-height: f.em(20px));
+    margin: f.em(5px) auto;
+  }
+
+  @include mix.mqDesk('tablet-landscape') {
+    @include mix.text($size: f.em(35px), $l-height: f.em(45px));
+    margin: f.em(5px) auto;
   }
 }
 
@@ -260,7 +260,7 @@ textarea,
 .info-head,
 .logo-text,
 #about-me p {
-  @include mix.text($size: f.em(11px), $l-height: f.em(22px));
+  @include mix.text($size: f.em(11px), $l-height: f.em(18px));
   text-align: center;
 
   //MEDIA QUERIES
@@ -273,19 +273,36 @@ textarea,
   }
 
   @include mix.mqDesk('tablet-portrait') {
-    @include mix.text($size: f.em(24px), $l-height: f.em(28px));
-    margin-bottom: f.em(5px);
+    @include mix.text($size: f.em(26px), $l-height: f.em(20px));
+    margin-top: f.em(10px);
   }
 
   @include mix.mqDesk('xx-lg-desktop-width') {
-    @include mix.text($size: f.em(34px), $l-height: f.em(38px));
+    // @include mix.text($size: f.em(34px), $l-height: f.em(38px));
+  }
+}
+
+.logo-text {
+  @include mix.mqDesk('tablet-portrait') {
+    @include mix.text($size: f.em(20px), $l-height: f.em(22px));
+    text-align: center;
+  }
+  @include mix.mqDesk('tablet-landscape') {
+    @include mix.text($size: f.em(28px), $l-height: f.em(22px));
+    text-align: center;
+  }
+}
+
+@include mix.mqDesk('tablet-landscape') {
+  .logo-way .logo-text {
+    margin-top: f.em(20px);
   }
 }
 
 @include mix.mqDesk('xx-lg-desktop-width') {
   .info-head.p3,
   .info-head.p5 {
-    @include mix.text($size: f.em(30px), $l-height: f.em(38px));
+    // @include mix.text($size: f.em(30px), $l-height: f.em(38px));
   }
 }
 
@@ -297,18 +314,20 @@ textarea,
   }
 
   @include mix.mqDesk('tablet-landscape') {
-    font-size: f.em(20px);
+    // font-size: f.em(20px);
   }
 }
 
 @include mix.mqDesk('tablet-portrait') {
   .proj-8 .info-head {
     font-size: (20px);
+    margin-top: f.em(10px);
+    margin-bottom: f.em(5px);
   }
 
   @include mix.mqDesk('tablet-landscape') {
     .proj-8 .info-head {
-      font-size: (18px);
+      // font-size: (18px);
     }
   }
 }
@@ -317,40 +336,37 @@ textarea,
   .rtb-logo,
   .s74-logo,
   .way-logo {
-    @include mix.text($size: f.em(34px), $l-height: f.em(40px));
+    // @include mix.text($size: f.em(34px), $l-height: f.em(40px));
   }
 
   .rtb-logo,
   .s74-logo {
-    @include mix.text($size: f.em(34px), $l-height: f.em(25px));
+    // @include mix.text($size: f.em(34px), $l-height: f.em(25px));
   }
 }
 
 .created-with {
   @include mix.text($size: f.em(14px), $l-height: f.em(24px));
+
   @include mix.mqDesk('tablet-portrait') {
     @include mix.text($size: f.em(22px), $l-height: f.em(20px));
     margin-left: f.em(5px);
   }
   @include mix.mqDesk('tablet-landscape') {
-    @include mix.text($size: f.em(16px), $l-height: f.em(20px));
-    margin-left: f.em(5px);
+    // @include mix.text($size: f.em(16px), $l-height: f.em(20px));
+    // margin-left: f.em(5px);
   }
   @include mix.mqDesk('xx-lg-desktop-width') {
-    @include mix.text($size: f.em(20px), $l-height: f.em(20px));
-    margin-left: f.em(5px);
+    // @include mix.text($size: f.em(20px), $l-height: f.em(20px));
+    // margin-left: f.em(5px);
   }
 }
 
 @include mix.mqDesk('tablet-landscape') {
   .created-with.proj-7 {
-    @include mix.text($size: f.em(12px), $l-height: f.em(18px));
-    margin-left: f.em(5px);
+    // @include mix.text($size: f.em(12px), $l-height: f.em(18px));
+    // margin-left: f.em(5px);
   }
-}
-
-.way-logo {
-  margin: f.em(2px) 0 f.em(10px) 0;
 }
 
 .balls:hover::before {
