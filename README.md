@@ -44,7 +44,7 @@ Users should be able to:
 
 ### Live Link
 
-- Live Site URL: [Project 8 Awesome Employee Directory](https://samatkinsonmodeste.github.io/Project-8-API-Employee-Directory/)
+- Live Site URL: [FEWD-Treehouse Techdegree Portfolio](https://samatkinsonmodeste.github.io/FEWD-Treehouse-Portfolio/#home)
 
 ## My Process
 
