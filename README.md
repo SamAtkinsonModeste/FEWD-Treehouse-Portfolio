@@ -16,9 +16,8 @@ A portfolio of projects created during my journey of Treehouse's FEWD Techdegree
   - [Technologies used](#technologies-used)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments) Coming Soon
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -74,13 +73,6 @@ I learnt that for my _GSAP_ animation to run, I had to add the values in quote m
 ### Continued Development
 
 Learning and using a Javascript framework such as React.
-
-### Resources
-
-- []() -
-- []() -
-- []() -
-- []() - 🤣
 
 ## Author
 
