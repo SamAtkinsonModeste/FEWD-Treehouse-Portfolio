@@ -3,6 +3,11 @@ const projectSlider = document.querySelector('.project-slider')
 const projects = document.querySelectorAll('.project')
 const mobileNav = document.querySelector('#mobile-nav')
 const mobileNavLi = mobileNav.querySelectorAll('li')
+const staticNav = document.querySelector('.static-li')
+const interactNav = document.querySelector('.interactive-li')
+const logoNav = document.querySelector('.logo-li')
+const portNavUl = document.querySelector('.top-slide-nav')
+const allPortLis = portNavUl.querySelectorAll('li')
 const slideNav = document.querySelector('.proj-slider-nav')
 const portTopNav = document.querySelector('.top-slide-nav')
 const topPortLi = portTopNav.querySelectorAll('li')
@@ -39,6 +44,8 @@ function initializeElements () {
 const setupsDismis = () => {
   overlay.style.display = 'none'
   projectSlider.style.display = 'flex'
+  projectSlider.style.justifyContent = 'space-evenly'
+  projectSlider.style.alignItems = 'center'
   slideNav.style.display = 'flex'
   projects.forEach(project => {
     project.style.margin = '0'
@@ -423,5 +430,90 @@ const prevProject = () => {
   ulPrevBtn()
 }
 
+function removeActive () {
+  projects.forEach(project => {
+    project.classList.remove('active-proj')
+  })
+}
+
 nextBtn.addEventListener('click', nextProject)
 prevBtn.addEventListener('click', prevProject)
+
+// staticNav.addEventListener('click', () => {
+//   console.log("I'm working")
+//   if (projectIndex > 0) {
+//     gsap.to(projects, {
+//       x: `-=${moveAmount}` * projectIndex,
+//       ease: 'power4.out',
+//       duration: 1
+//     })
+//     removeActive()
+//     projects[0].classList.add('active-proj')
+//     gsap.to('.active-proj', { scale: 1, delay: 0.8, duration: 0.8 })
+//     projectIndex = 0
+//     console.log(projectIndex)
+
+//     topPortLi.forEach(topLi => {
+//       topLi.classList.remove('active-proj-sec')
+//     })
+
+//     staticNav.classList.add('active-proj-sec')
+//   }
+
+//   if (ulInteract.classList.contains('current-ul')) {
+//     ulInteract.classList.remove('current-ul')
+//     gsap.to(ulInteract, { y: 100 })
+//     ulStatic.classList.add('current-ul')
+//     gsap.to(ulStatic, { xPercent: 0 })
+//     indicatDots.forEach(list => list.classList.remove('active-indiBall'))
+//     indicatDots[0].classList.add('active-indiBall')
+//   } else if (ulLogos.classList.contains('current-ul')) {
+//     ulLogos.classList.remove('current-ul')
+//     gsap.to(ulLogos, { y: 100 })
+//     ulStatic.classList.add('current-ul')
+//     gsap.to(ulStatic, { xPercent: 0 })
+//     indicatDots.forEach(list => list.classList.remove('active-indiBall'))
+//     indicatDots[0].classList.add('active-indiBall')
+//   }
+// })
+
+// interactNav.addEventListener('click', () => {
+//   console.log("I'm working for interactive nav")
+//   if (projectIndex > 3) {
+//     projectReset = projectIndex[3]
+
+//     console.log(projectIndex)
+//     gsap.to(projects[3], {
+//       x: `-=${moveAmount}` * projectIndex - projectReset,
+//       ease: 'power4.out',
+//       duration: 1
+//     })
+//     removeActive()
+//     projects[3].classList.add('active-proj')
+//     gsap.to('.active-proj', { scale: 1, delay: 0.8, duration: 0.8 })
+//     projectIndex = 3
+//     console.log(projectIndex)
+
+//     topPortLi.forEach(topLi => {
+//       topLi.classList.remove('active-proj-sec')
+//     })
+
+//     interactive.classList.add('active-proj-sec')
+//   }
+
+//   if (ulStatic.classList.contains('current-ul')) {
+//     ulStatic.classList.remove('current-ul')
+//     gsap.to(ulInteract, { y: 100 })
+//     ulStatic.classList.add('current-ul')
+//     gsap.to(ulStatic, { xPercent: 0 })
+//     indicatDots.forEach(list => list.classList.remove('active-indiBall'))
+//     indicatDots[0].classList.add('active-indiBall')
+//   } else if (ulLogos.classList.contains('current-ul')) {
+//     ulLogos.classList.remove('current-ul')
+//     gsap.to(ulLogos, { y: 100 })
+//     ulStatic.classList.add('current-ul')
+//     gsap.to(ulStatic, { xPercent: 0 })
+//     indicatDots.forEach(list => list.classList.remove('active-indiBall'))
+//     indicatDots[0].classList.add('active-indiBall')
+//   }
+// })
