@@ -43,14 +43,10 @@ function initializeElements () {
 //callback for when the animaLogo is finished
 const setupsDismis = () => {
   overlay.style.display = 'none'
-  projectSlider.style.display = 'flex'
-  projectSlider.style.justifyContent = 'space-evenly'
-  projectSlider.style.alignItems = 'center'
-  slideNav.style.display = 'flex'
   projects.forEach(project => {
     project.style.margin = '0'
 
-    // gsap.to(project, { scale: 0.5 })
+    gsap.to(project, { scale: 0.5 })
 
     if (projects.length > 0) {
       projects[projectIndex].classList.add('active-proj')

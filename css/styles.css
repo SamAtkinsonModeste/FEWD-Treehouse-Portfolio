@@ -938,7 +938,7 @@ main {
 }
 
 .project-slider {
-  display: block;
+  display: flex;
   width: 100%;
   height: 100%;
   justify-content: space-evenly;
@@ -980,12 +980,7 @@ main {
 }
 
 .active-proj {
-  align-self: center;
-}
-@media (min-width: 1400px) {
-  .active-proj {
-    align-self: flex-start;
-  }
+  align-self: flex-start;
 }
 
 .logo-container {
@@ -1367,7 +1362,7 @@ PORTFOLIO NAV CONTROLS
 *********************/
 .proj-slider-nav {
   grid-area: galleryNav;
-  display: block;
+  display: flex;
   justify-content: space-between;
   height: 30px;
   width: 100%;
