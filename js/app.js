@@ -322,7 +322,7 @@ function showProjs (index) {
   indicatDots[projectIndex].classList.add('active-indiBall')
 }
 
-//UL SWAPOUT AND IN FUNCTIONS
+//UL SWAP OUT AND IN FUNCTIONS
 function ulNextBtn () {
   if (projectIndex === 3) {
     // console.log(ulInteractive);
@@ -330,7 +330,7 @@ function ulNextBtn () {
     ulStatic.classList.remove('current-ul')
     ulInteract.style.display = 'flex'
     ulInteract.classList.add('current-ul')
-    gsap.to(ulInteract, { y: -40 })
+    gsap.to(ulInteract, { y: -45 })
     topPortLi.forEach(portLi => {
       portLi.classList.remove('active-proj-sec')
     })
@@ -340,7 +340,7 @@ function ulNextBtn () {
     ulInteract.classList.remove('current-ul')
     gsap.to(ulInteract, { y: 100 })
     ulLogos.classList.add('current-ul')
-    gsap.to(ulLogos, { y: -96 })
+    gsap.to(ulLogos, { y: -101 })
     topPortLi.forEach(portLi => {
       portLi.classList.remove('active-proj-sec')
     })
@@ -364,7 +364,7 @@ function ulPrevBtn () {
     ulLogos.classList.remove('current-ul')
     gsap.to(ulLogos, { y: 100 })
     ulInteract.classList.add('current-ul')
-    gsap.to(ulInteract, { y: -43 })
+    gsap.to(ulInteract, { y: -45 })
     topPortLi.forEach(portLi => {
       portLi.classList.remove('active-proj-sec')
     })
